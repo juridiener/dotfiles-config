@@ -1,0 +1,8 @@
+yarn/
+iterm2/
+zsh/.zcom*
+zsh/.zsh_history
+zsh/.zsh_sessions/**
+zsh/.zsh_sessions/
+.DS_Store
+**/.swp
