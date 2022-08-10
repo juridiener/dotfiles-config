@@ -60,6 +60,13 @@ return packer.startup(function(use)
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
+  use{
+      'rose-pine/neovim',
+      as = 'rose-pine',
+      config = function()
+        vim.cmd('colorscheme rose-pine')
+      end
+  }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
@@ -86,6 +93,11 @@ return packer.startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     commit = "518e27589c0463af15463c9d675c65e464efc2fe",
+  }
+  
+  -- Whichkey
+  use {
+    "folke/which-key.nvim"
   }
 
   -- Git
