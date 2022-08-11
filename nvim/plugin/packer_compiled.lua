@@ -119,10 +119,20 @@ _G.packer_plugins = {
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["colorbuddy.vim"] = {
+    loaded = true,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
+    url = "https://github.com/tjdevries/colorbuddy.vim"
+  },
   ["darkplus.nvim"] = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/lunarvim/darkplus.nvim"
+  },
+  everforest = {
+    loaded = true,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -133,6 +143,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
+  ["gruvbuddy.nvim"] = {
+    loaded = true,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim",
+    url = "https://github.com/tjdevries/gruvbuddy.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -219,11 +239,10 @@ _G.packer_plugins = {
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
-  ["rose-pine"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0" },
+  ["substrata.nvim"] = {
     loaded = true,
-    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/substrata.nvim",
+    url = "https://github.com/kvrohit/substrata.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -258,10 +277,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
 if should_profile then save_profiles() end
 
 end)
