@@ -119,21 +119,6 @@ _G.packer_plugins = {
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["colorbuddy.vim"] = {
-    loaded = true,
-    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
-    url = "https://github.com/tjdevries/colorbuddy.vim"
-  },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
-  },
-  everforest = {
-    loaded = true,
-    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -148,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
-  },
-  ["gruvbuddy.nvim"] = {
-    loaded = true,
-    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim",
-    url = "https://github.com/tjdevries/gruvbuddy.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -219,6 +199,11 @@ _G.packer_plugins = {
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -239,10 +224,10 @@ _G.packer_plugins = {
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
-  ["substrata.nvim"] = {
+  ["promise-async"] = {
     loaded = true,
-    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/substrata.nvim",
-    url = "https://github.com/kvrohit/substrata.nvim"
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -253,11 +238,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-bbye"] = {
     loaded = true,
