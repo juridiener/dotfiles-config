@@ -6,3 +6,4 @@ zsh/.zsh_sessions/**
 zsh/.zsh_sessions/
 .DS_Store
 **/.swp
+**/packer_compiled.lua

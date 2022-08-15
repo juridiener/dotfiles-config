@@ -63,6 +63,23 @@ return packer.startup(function(use)
   -- Folding
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
+  -- use {
+  --   "kevinhwang91/nvim-ufo",
+  --   opt = true,
+  --   event = { "BufReadPre" },
+  --   wants = { "promise-async" },
+  --   requires = "kevinhwang91/promise-async",
+  --   config = function()
+  --     require("ufo").setup {
+  --       provider_selector = function(bufnr, filetype)
+  --         return { "lsp", "treesitter" }
+  --       end,
+  --     }
+  --     vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+  --     vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+  --   end,
+  -- }
+
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
   use { "hrsh7th/cmp-buffer", commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" } -- buffer completions
