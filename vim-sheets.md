@@ -56,6 +56,7 @@
   " = Return to the line where the cursor was before the latest jump.
   `` = Return to the cursor position before the latest jump (undo the jump)
   #(hash) = go to the next word in the cursor
+  ~ = toggle upper and lowercase at cursor position or selected text
 
 ## SEARCH
   /and the word to search
@@ -132,6 +133,24 @@
 get filetype name for files and plugins
 :echo &ft
 example open telescope and then type :echo &ft
+
+## Macros
+stop macro = <C-c>
+
+q = start recording, m = register can any char, q = stop recording
+Empty a register for macro run qmq and then the macro with qm
+run macro : @m or 20@m 
+
+run macro in command mode:
+2 + start line, 3 = end line, normal or norm = normal-mode
+```
+:2,3 normal @m
+```
+Run macro from current cursor position:
+. = current corsor position, $ = end of buffer
+```
+:.,$normal @m
+```
 
 ------------------------------------------------------------------------------
 http://vimdoc.sourceforge.net/htmldoc/usr_30.html
