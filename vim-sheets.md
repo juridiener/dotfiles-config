@@ -152,6 +152,18 @@ Run macro from current cursor position:
 :.,$normal @m
 ```
 
+Macro only execute the macro in the selection with a pattern.
+```vim
+:[range]g/pattern/cmd
+```
+
+1. First type the macro for one line
+  a. qmq = empty the register m
+  b. qm = start recording
+  c. o<p></p>q = type your macro
+  d. select your text
+  e. :g/row/ norm @m = execute macro on selection
+
 ------------------------------------------------------------------------------
 http://vimdoc.sourceforge.net/htmldoc/usr_30.html
 
