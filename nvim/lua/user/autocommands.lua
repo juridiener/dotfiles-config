@@ -38,6 +38,16 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+-- autosave when loose focus
+
+vim.api.nvim_create_autocmd({"FocusLost"},{
+  callback = function()
+    vim.cmd [[
+      :au FocusLost * silent! wa
+    ]]
+  end,
+})
+
 -- Highlight Yanked Text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
