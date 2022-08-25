@@ -214,6 +214,14 @@ _G.packer_plugins = {
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  playground = {
+    commands = { "TSPlaygroundToggle" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/opt/playground",
+    url = "https://github.com/nvim-treesitter/playground"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -257,6 +265,12 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TSPlaygroundToggle lua require("packer.load")({'playground'}, { cmd = "TSPlaygroundToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
 if should_profile then save_profiles() end
 
 end)
