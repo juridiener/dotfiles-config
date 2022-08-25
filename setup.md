@@ -89,11 +89,9 @@ https://github.com/fikovnik/ShiftIt
 - git init --bare $HOME/dotfiles
 
 
-# brew update
-## list outdated plugins
-- brew outdated
-## upgrade plugins
-- brew upgrade
+# Update a package
+- brew update
+- brew upgrade fzf
 
 
 # exit fullscreen in alacritty
