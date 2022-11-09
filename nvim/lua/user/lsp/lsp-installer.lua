@@ -12,6 +12,7 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "solargraph"
 }
 
 lsp_installer.setup()

@@ -48,6 +48,24 @@ vim.api.nvim_create_autocmd({"FocusLost"},{
   end,
 })
 
+-- Remember Folds when closing and open nvim -----
+vim.api.nvim_create_autocmd({"BufWinLeave"},{
+  callback = function()
+    vim.cmd [[
+      :au BufWinLeave *.* mkview
+    ]]
+  end,
+})
+
+vim.api.nvim_create_autocmd({"BufWinEnter"},{
+  callback = function()
+    vim.cmd [[
+      :au BufWinEnter *.* silent! loadview
+    ]]
+  end,
+})
+-- Remember Folds when closing and open nvim -----
+
 -- Highlight Yanked Text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
