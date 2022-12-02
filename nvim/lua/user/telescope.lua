@@ -19,8 +19,12 @@ telescope.setup {
         ["<Up>"] = actions.cycle_history_prev,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
+        ['<C-p>'] = require('telescope.actions.layout').toggle_preview,
       },
     },
+    preview = {
+      hide_on_startup = true -- hide previewer when picker starts
+    } 
   },
   extensions = {
     fzf = {
