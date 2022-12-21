@@ -23,7 +23,7 @@ telescope.setup {
       },
     },
     preview = {
-      hide_on_startup = true -- hide previewer when picker starts
+      hide_on_startup = true, -- hide previewer when picker starts
     } 
   },
   extensions = {

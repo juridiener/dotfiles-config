@@ -57,6 +57,9 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }
   use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
 
+  -- Scrolling
+  -- use {"karb94/neoscroll.nvim"}
+
   -- Colorschemes
   use {"sainnhe/gruvbox-material"}
 

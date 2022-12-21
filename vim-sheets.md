@@ -13,6 +13,10 @@
   Open all files include subdirectories
     - vim `find . -type f`
 
+## noraml mode
+  <C-a> = increment number
+  <C-x> = decrement number
+
 ## Copy | Cut | paste
 
   i = insert before char
@@ -111,6 +115,7 @@
 
 ## Visual Mode
   u = lowercase
+  U = uppercase
 
 ## Additional Information
   dw - at the cursor
@@ -127,6 +132,21 @@
 
 # Important links
 ## tabs = https://www.linux.com/training-tutorials/vim-tips-using-tabs/
+
+# Cool Stuff
+### Do math multiplication for example on a csv-file.
+ - In normal mode press on the number ciw (this cut the number in register ")
+ - Then in insert mode press <C-r>= (this put you in command line mode)
+ - Now press <C-r>" (This paste the number from register)
+ - Now you can do any Math you want
+ - this works to with a macro start first with macro and then the steps with ciw
+### Sort csv-file by column in asc
+ - Select all the lines to sort
+ - Then press :
+ - Then press %!sort -t "," -k3
+  - "," = seperator
+  - -k3 = column 3
+
 
 # Comman Befehle
 

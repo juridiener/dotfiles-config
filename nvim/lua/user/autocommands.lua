@@ -1,3 +1,24 @@
+-- Remember Folds when closing and open nvim -----
+
+vim.api.nvim_create_autocmd({"BufWinLeave"},{
+  callback = function()
+    vim.cmd [[
+      :au BufWinLeave *.* mkview
+    ]]
+  end,
+})
+
+vim.api.nvim_create_autocmd({"BufWinEnter"},{
+  callback = function()
+    vim.cmd [[
+      :au BufWinEnter *.* silent! loadview
+    ]]
+  end,
+})
+
+
+-- Remember Folds when closing and open nvim -----
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
@@ -48,23 +69,6 @@ vim.api.nvim_create_autocmd({"FocusLost"},{
   end,
 })
 
--- Remember Folds when closing and open nvim -----
-vim.api.nvim_create_autocmd({"BufWinLeave"},{
-  callback = function()
-    vim.cmd [[
-      :au BufWinLeave *.* mkview
-    ]]
-  end,
-})
-
-vim.api.nvim_create_autocmd({"BufWinEnter"},{
-  callback = function()
-    vim.cmd [[
-      :au BufWinEnter *.* silent! loadview
-    ]]
-  end,
-})
--- Remember Folds when closing and open nvim -----
 
 -- Highlight Yanked Text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
