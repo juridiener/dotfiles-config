@@ -173,3 +173,12 @@ Example: bundle exec rake query:import
   - This will exclude searching all the files ending with .o extension:
     - grep --exclude=\*.o -rnw '/path/to/somewhere/' -e "pattern"
 
+# See all installed binaries in a text file
+touch ~/Binaries.txt
+ls /usr/bin > ~/Binaries.txt
+ls /usr/sbin >> ~/Binaries.txt
+ls /usr/local/bin >> ~/Binaries.txt
+ls /usr/local/sbin >> ~/Binaries.txt
+ls /opt/local/bin >> ~/Binaries.txt
+ls /opt/local/sbin >> ~/Binaries.text
+
