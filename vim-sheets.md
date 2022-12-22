@@ -147,6 +147,12 @@
   - "," = seperator
   - -k3 = column 3
 
+### Put Messages in a buffe or clipboard
+Buffer:
+    :put =execute('messages')
+Clipoard:
+    :let @+ = execute('messages')
+
 
 # Comman Befehle
 

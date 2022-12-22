@@ -9,6 +9,9 @@ export ZSH="/Users/juri.diener/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
+export TERM=alacritty
+
 ZSH_THEME="robbyrussell"
 
 # goes to directory where git repo is initialized
