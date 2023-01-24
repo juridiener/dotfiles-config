@@ -15,6 +15,7 @@ vim.opt.smartindent = true                      -- make indenting smarter again
 vim.opt.splitbelow = true                       -- force all horizontal splits to go below current window
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
+vim.o.termguicolors = true                    -- set term gui colors (most terminals support this)
 -- vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
 
 -- UNDO TREE

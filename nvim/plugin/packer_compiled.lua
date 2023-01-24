@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
   },
+  ["headlines.nvim"] = {
+    loaded = true,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/headlines.nvim",
+    url = "https://github.com/lukas-reineke/headlines.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -218,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  orgmode = {
+    loaded = true,
+    path = "/Users/juri.diener/.local/share/nvim/site/pack/packer/start/orgmode",
+    url = "https://github.com/nvim-orgmode/orgmode"
   },
   ["packer.nvim"] = {
     loaded = true,

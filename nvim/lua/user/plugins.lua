@@ -57,8 +57,11 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim"}
   use { "goolord/alpha-nvim"}
 
-  -- Scrolling
-  -- use {"karb94/neoscroll.nvim"}
+  --org mode (tasks, notes in .org-files)
+  use {'nvim-orgmode/orgmode'}
+
+  -- for nvim-orgmode (hedaline, codeblocks highlight)
+  use {'lukas-reineke/headlines.nvim'}
 
   -- Colorschemes
   use {"sainnhe/gruvbox-material"}
@@ -67,7 +70,7 @@ return packer.startup(function(use)
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- Mini Nvim 
-  use { 'echasnovski/mini.nvim', branch = 'stable' }
+  use { 'echasnovski/mini.nvim', branch = 'main' }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp"} -- The completion plugin

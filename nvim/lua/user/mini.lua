@@ -13,3 +13,10 @@ if not surround_ok then
 end
 
 surround.setup()
+
+--[[ local animate_ok, animate = pcall(require, "mini.animate") ]]
+--[[ if not animate_ok then ]]
+--[[   print('mini animate not avaible') ]]
+--[[   return ]]
+--[[ end ]]
+--[[ animate.setup() ]]
