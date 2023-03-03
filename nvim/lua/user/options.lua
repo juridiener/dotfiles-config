@@ -18,6 +18,9 @@ vim.opt.termguicolors = true                    -- set term gui colors (most ter
 vim.o.termguicolors = true                    -- set term gui colors (most terminals support this)
 -- vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
 
+vim.opt_local.spell = true
+vim.opt_local.spelllang = {'en_us', 'de_de'}
+
 -- UNDO TREE
 vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.backup = false                          -- creates a backup file
@@ -48,3 +51,10 @@ vim.opt.fillchars.eob=" "
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
+
+-- options for nvimorg
+-- Links are concealed with Vim's conceal feature (see :help conceal). To enable concealing, add this to your
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = 'nc'
+-- If you are using Windows, paths are by default written with backslashes. To use forward slashes, you must enable
+vim.opt.shellslash = true                       

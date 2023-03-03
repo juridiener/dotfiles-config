@@ -12,6 +12,7 @@ orgmode.setup_ts_grammar()
 orgmode.setup({
   org_agenda_files = {'~/Documents/org-files/**/*'},
   org_default_notes_file = '~/Documents/org-files/refile.org',
+  org_todo_keywords = {'TODO(t)', '|', 'DONE(d)'},
   org_capture_templates = {
     t = {
       description = 'Todo',
@@ -29,9 +30,9 @@ orgmode.setup({
       target = '~/Documents/org-files/notes.org'
     }
   },
-  mappings = {
-    org = {
-      org_toggle_checkbox = '<C-Space>',
-    }
-  }
+  --[[ mappings = { ]]
+  --[[   org = { ]]
+  --[[     org_toggle_checkbox = '<C-Space>', ]]
+  --[[   } ]]
+  --[[ } ]]
 })

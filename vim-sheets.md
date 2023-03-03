@@ -1,3 +1,5 @@
+https://neovim.io/doc/user/quickref.html#_-quick-reference-guide
+
 # Vim Sheets
 
 # Command Line tools
@@ -55,7 +57,8 @@
   % = Jump to corresponding item, e.g. from an open brace to its matching closing brace
   | = Jump to the 1st column of the current line
   42| = Jump to the 42nd column of the current line
-  g; = Jump to the place of last edit. Can be quite helpful while debugging or editing files.
+  g; = Jump to the place of last edit. (back) : in current file
+  g, = Jump to the place of new edit (forth) : in current file
 
   " = Return to the line where the cursor was before the latest jump.
   `` = Return to the cursor position before the latest jump (undo the jump)
@@ -206,11 +209,6 @@ the cursor is on "printf":
 	}			}			    } 
 
 ------------------------------------------------------------------------------
-
-
-
-
-
 
 
 

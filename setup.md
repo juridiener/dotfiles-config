@@ -81,6 +81,16 @@ Install tmux
 - brew install tmux
 in tmux.conf: type command: <C-a>I
 
+## install yabai
+https://digitalblake.com/2021/08/27/yabai-and-skhd-configs/
+https://www.joshmedeski.com/posts/blazing-fast-window-management-on-macos/
+
+brew install yabai
+brew install skhd
+brew services start yabai
+brew services start skhd
+brew services list
+
 
 Install window manager:
 https://github.com/fikovnik/ShiftIt
