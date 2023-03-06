@@ -43,20 +43,20 @@ yabai -m rule --add app="^Pika$" manage=off
 yabai -m rule --add app="^balenaEtcher$" manage=off
 yabai -m rule --add app="^Creative Cloud$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
-# yabai -m rule --add app="^Alfred Preferences$" manage=off
-# yabai -m rule --add app="Raycast" manage=off
-# yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="Raycast" manage=off
+yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
-# yabai -m rule --add app="^zoom.us$" manage=off
-# yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^zoom.us$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 # yabai -m rule --add app="^Path Finder$" manage=off
-# yabai -m rule --add app="^TeamViewer$" manage=off
+yabai -m rule --add app="^TeamViewer$" manage=off
 # yabai -m rule --add app="^Private Internet Access$" manage=off
-# yabai -m rule --add app="^Discord$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Podcasts$" manage=off
