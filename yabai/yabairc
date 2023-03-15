@@ -55,6 +55,7 @@ yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 # yabai -m rule --add app="^Path Finder$" manage=off
 yabai -m rule --add app="^TeamViewer$" manage=off
+yabai -m rule --add app="^LibreOffice$" manage=off
 # yabai -m rule --add app="^Private Internet Access$" manage=off
 yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off

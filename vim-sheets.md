@@ -19,7 +19,7 @@ https://neovim.io/doc/user/quickref.html#_-quick-reference-guide
   <C-a> = increment number
   <C-x> = decrement number
 
-## Copy | Cut | paste
+### Copy | Cut | paste
 
   i = insert before char
   I = insert beginning of the line
@@ -59,6 +59,7 @@ https://neovim.io/doc/user/quickref.html#_-quick-reference-guide
   42| = Jump to the 42nd column of the current line
   g; = Jump to the place of last edit. (back) : in current file
   g, = Jump to the place of new edit (forth) : in current file
+  == = Select line and press (==) indent the lines
 
   " = Return to the line where the cursor was before the latest jump.
   `` = Return to the cursor position before the latest jump (undo the jump)
@@ -119,6 +120,7 @@ https://neovim.io/doc/user/quickref.html#_-quick-reference-guide
 ## Visual Mode
   u = lowercase
   U = uppercase
+  = = Select line and press (=) indent the lines
 
 ## Additional Information
   dw - at the cursor
