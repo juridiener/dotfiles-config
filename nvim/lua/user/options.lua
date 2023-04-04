@@ -15,8 +15,14 @@ vim.opt.smartindent = true                      -- make indenting smarter again
 vim.opt.splitbelow = true                       -- force all horizontal splits to go below current window
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
-vim.o.termguicolors = true                    -- set term gui colors (most terminals support this)
 -- vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
+
+--set colors
+vim.api.nvim_set_hl(0, 'CurSearch', { bg = '#ffff00', fg = '#000000'})
+vim.api.nvim_set_hl(0, 'Search', { bg = '#ffff00', fg = '#000000' })
+vim.api.nvim_set_hl(0, 'IncSearch', { bg = '#ffff00', fg = '#000000' })
+
+vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#ffff00'})
 
 vim.opt_local.spell = true
 vim.opt_local.spelllang = {'en_us', 'de_de'}
@@ -47,6 +53,7 @@ vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 -- vim.opt.wrapscan = false                       -- for searches or macro if hints the end it print a error message
+
 vim.opt.fillchars.eob=" "
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
