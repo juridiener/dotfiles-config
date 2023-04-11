@@ -18,7 +18,8 @@ ZSH_THEME="robbyrussell"
 alias cdg='cd $(git rev-parse --show-cdup)'
 
 # switch to different nvim configs
-alias nvim-lazy='NVIM_APPNAME=LazyVim nvim'
+alias nvim='NVIM_APPNAME=LazyVim nvim'
+alias nvim-my='NVIM_APPNAME=nvim nvim'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
