@@ -17,6 +17,9 @@ ZSH_THEME="robbyrussell"
 # goes to directory where git repo is initialized
 alias cdg='cd $(git rev-parse --show-cdup)'
 
+# switch to different nvim configs
+alias nvim-lazy='NVIM_APPNAME=LazyVim nvim'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -108,5 +111,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # https://unix.stackexchange.com/questions/662972/place-tmux-configuration-in-a-different-folder
-#alias tmux='tmux -f "~/.config/tmux/tmux.conf"'
+# alias tmux='tmux -f "~/.config/tmux/tmux.conf"'
 
