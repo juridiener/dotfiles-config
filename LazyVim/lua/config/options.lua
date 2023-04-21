@@ -11,5 +11,5 @@ vim.opt.undofile = false -- enable persistent undo
 -- END UNDO TRREE
 
 vim.o.foldmethod = "indent" -- Set 'indent' folding method
-vim.o.foldlevel = 20 -- Display all folds except top ones
+vim.o.foldlevel = 1 -- Display all folds except top ones
 vim.o.foldnestmax = 10 -- Create folds only for some number of nested levels
