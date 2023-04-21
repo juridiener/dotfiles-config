@@ -192,3 +192,7 @@ ls /usr/local/sbin >> ~/Binaries.txt
 ls /opt/local/bin >> ~/Binaries.txt
 ls /opt/local/sbin >> ~/Binaries.text
 
+# Uninstall Applications fully
+sudo rm ~/Library/Preferences/com.googlecode.iterm2.plist
+sudo rm -r ~/Library/Application\ Support/iTerm2
+sudo rm -r /Applications/iTerm2.app 

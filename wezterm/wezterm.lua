@@ -1,7 +1,65 @@
+-- SHIFT+CTRL+L = Debug Mode
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 local act = wezterm.action
 local mux = wezterm.mux
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	local numpanes = ""
+	if #tab.panes > 1 then
+		numpanes = "(" .. tostring(#tab.panes) .. ") "
+	end
+	return numpanes .. tab.active_pane.title
+end)
+
+-- format window title
+wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+	local numtabs = ""
+	if #tabs > 1 then
+		numtabs = "(" .. tostring(#tabs) .. ") "
+	end
+	return numtabs .. tab.active_pane.title
+end)
+
+-- wezterm.on("gui-startup", function()
+-- 	local tab, pane, window = mux.spawn_window({})
+-- 	window:gui_window():maximize()
+--
+-- 	local args = {}
+-- 	if cmd then
+-- 		args = cmd.args
+-- 	end
+--
+-- 	-- Set a workspace for coding on a current project
+-- 	-- Top pane is for the editor, bottom pane is for the build tool
+-- 	local config_cwd = "~/.config/"
+-- 	local tab, build_pane, window = mux.spawn_window({
+-- 		workspace = "config",
+-- 		cwd = config_cwd,
+-- 		args = args,
+-- 	})
+-- 	-- local editor_pane = build_pane:split {
+-- 	--   direction = 'Top',
+-- 	--   size = 0.6,
+-- 	--   cwd = project_dir,
+-- 	-- }
+--
+-- 	-- A workspace for interacting with a local machine that
+-- 	-- runs some docker containners for home automation
+-- 	--
+-- 	local tab, pane, window = mux.spawn_window({
+-- 		workspace = "dev",
+-- 		cwd = "~/Documents/dev/",
+-- 	})
+--
+-- 	-- We want to startup in the coding workspace
+-- 	mux.set_active_workspace("dev")
+-- end)
+
+-- wezterm.on("new-tab-button-click", function(window, pane, button, default_action)
+-- 	-- just log the default action and allow wezterm to perform it
+-- 	wezterm.log_info("new-tab", window, pane, button, default_action)
+-- end)
 
 -- This table will hold the configuration.
 local config = {}
@@ -12,10 +70,18 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.window_padding = {
+	left = 11,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
+
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 14.0
 config.adjust_window_size_when_changing_font_size = false
 config.color_scheme = "Gruvbox dark, medium (base16)"
+
 -- config.window_background_image = '/path/to/wallpaper.jpg'
 config.window_background_opacity = 1.0
 
@@ -45,6 +111,9 @@ config.colors = {
 config.inactive_pane_hsb = {
 	brightness = 0.5,
 }
+
+-- Wird vermutlich als default bei mac genommen
+-- config.default_prog = { "/usr/local/bin/zsh", "-l" }
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2044 }
 config.keys = {
@@ -158,41 +227,6 @@ for i = 1, 8 do
 		action = act.ActivateTab(i - 1),
 	})
 end
-
-wezterm.on("gui-startup", function()
-	local tab, pane, window = mux.spawn_window({})
-	window:gui_window():maximize()
-
-	local args = {}
-	if cmd then
-		args = cmd.args
-	end
-
-	-- Set a workspace for coding on a current project
-	-- Top pane is for the editor, bottom pane is for the build tool
-	local config_cwd = "~/.config/"
-	local tab, build_pane, window = mux.spawn_window({
-		workspace = "config",
-		cwd = config_cwd,
-		args = args,
-	})
-	-- local editor_pane = build_pane:split {
-	--   direction = 'Top',
-	--   size = 0.6,
-	--   cwd = project_dir,
-	-- }
-
-	-- A workspace for interacting with a local machine that
-	-- runs some docker containners for home automation
-	--
-	local tab, pane, window = mux.spawn_window({
-		workspace = "dev",
-		cwd = "~/Documents/dev/",
-	})
-
-	-- We want to startup in the coding workspace
-	mux.set_active_workspace("dev")
-end)
 
 -- and finally, return the configuration to wezterm
 return config
