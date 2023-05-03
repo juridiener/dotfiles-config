@@ -196,3 +196,7 @@ ls /opt/local/sbin >> ~/Binaries.text
 sudo rm ~/Library/Preferences/com.googlecode.iterm2.plist
 sudo rm -r ~/Library/Application\ Support/iTerm2
 sudo rm -r /Applications/iTerm2.app 
+
+# Browser Movements:
+https://apple.stackexchange.com/questions/24609/remapping-keyboard-shortcuts-in-chrome-and-firefox
+System Preferences:Keyboard:Shortcuts:App Shortcuts

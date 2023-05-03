@@ -4,57 +4,81 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local mux = wezterm.mux
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local numpanes = ""
-	if #tab.panes > 1 then
-		numpanes = "(" .. tostring(#tab.panes) .. ") "
-	end
-	return numpanes .. tab.active_pane.title
-end)
-
--- format window title
-wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
-	local numtabs = ""
-	if #tabs > 1 then
-		numtabs = "(" .. tostring(#tabs) .. ") "
-	end
-	return numtabs .. tab.active_pane.title
-end)
-
--- wezterm.on("gui-startup", function()
--- 	local tab, pane, window = mux.spawn_window({})
--- 	window:gui_window():maximize()
---
--- 	local args = {}
--- 	if cmd then
--- 		args = cmd.args
+-- wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+-- 	local numpanes = ""
+-- 	if #tab.panes > 1 then
+-- 		numpanes = "(" .. tostring(#tab.panes) .. ") "
 -- 	end
---
--- 	-- Set a workspace for coding on a current project
--- 	-- Top pane is for the editor, bottom pane is for the build tool
--- 	local config_cwd = "~/.config/"
--- 	local tab, build_pane, window = mux.spawn_window({
--- 		workspace = "config",
--- 		cwd = config_cwd,
--- 		args = args,
--- 	})
--- 	-- local editor_pane = build_pane:split {
--- 	--   direction = 'Top',
--- 	--   size = 0.6,
--- 	--   cwd = project_dir,
--- 	-- }
---
--- 	-- A workspace for interacting with a local machine that
--- 	-- runs some docker containners for home automation
--- 	--
--- 	local tab, pane, window = mux.spawn_window({
--- 		workspace = "dev",
--- 		cwd = "~/Documents/dev/",
--- 	})
---
--- 	-- We want to startup in the coding workspace
--- 	mux.set_active_workspace("dev")
+-- 	return numpanes .. tab.active_pane.title
 -- end)
+--
+-- -- format window title
+-- wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+-- 	local numtabs = ""
+-- 	if #tabs > 1 then
+-- 		numtabs = "(" .. tostring(#tabs) .. ") "
+-- 	end
+-- 	return numtabs .. tab.active_pane.title
+-- end)
+
+wezterm.on("gui-startup", function()
+	local home = os.getenv("HOME")
+	local tab, pane, window = mux.spawn_window({
+		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner-react-vite/",
+		workspace = "REACT",
+	})
+
+	window:gui_window():maximize()
+	tab:set_title("REACT")
+
+	-- Create a new tab in the dev workspace
+	-- local ws_react_tab2 = window:spawn_tab({})
+	-- ws_react_tab2:set_title("tab2")
+
+	local ws_api_tab, ws_api_pane, ws_api_window = mux.spawn_window({
+		cwd = home .. "/Documents/projects/hains/hains_docker/HAINS-api/",
+		workspace = "API",
+	})
+	ws_api_tab:set_title("API")
+
+	local ws_joomla_tab, ws_joomla_pane, ws_joomla_window = mux.spawn_window({
+		cwd = home .. "/Documents/projects/hains/hains_docker/hains_joomla/joomla/hains",
+		workspace = "JOOMLA",
+	})
+	-- ws_joomla_tab:set_title("")
+
+	local ws_docker_tab, ws_docker_pane, ws_docker_window = mux.spawn_window({
+		cwd = home .. "/Documents/projects/hains/hains_docker/",
+		workspace = "DOCKER",
+	})
+	ws_docker_tab:set_title("DOCKER")
+
+	local ws_server_tab, ws_server_pane, ws_server_window = mux.spawn_window({
+		cwd = home,
+		workspace = "SERVER",
+	})
+	-- ws_server_tab:set_title("SERVER")
+
+	local ws_config_tab, ws_config_pane, ws_config_window = mux.spawn_window({
+		cwd = home .. "/.config/",
+		workspace = "CONFIG",
+	})
+	ws_config_tab:set_title("CONFIG")
+
+	tab:activate()
+	pane:split({ direction = "Right", size = 0.1 })
+	pane:activate()
+
+	local ws_api_tab2 = ws_api_window.spawn_tab({})
+	ws_api_tab2:set_title("Tab2")
+
+	ws_api_pane.split({ direction = "Right", size = 0.1 })
+	ws_api_tab:activate()
+	ws_api_pane:activate()
+
+	-- We want to startup in the coding workspace
+	mux.set_active_workspace("react")
+end)
 
 -- wezterm.on("new-tab-button-click", function(window, pane, button, default_action)
 -- 	-- just log the default action and allow wezterm to perform it
@@ -63,6 +87,7 @@ end)
 
 -- This table will hold the configuration.
 local config = {}
+config.audible_bell = "Disabled"
 
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
@@ -77,8 +102,12 @@ config.window_padding = {
 	bottom = 0,
 }
 
+config.enable_scroll_bar = true
+config.scrollback_lines = 20000
+-- config.min_scroll_bar_height = "200px"
+
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 14.0
+config.font_size = 16.0
 config.adjust_window_size_when_changing_font_size = false
 config.color_scheme = "Gruvbox dark, medium (base16)"
 
@@ -107,6 +136,8 @@ config.colors = {
 			intensity = "Bold",
 		},
 	},
+	scrollbar_thumb = "#cc241d",
+	-- selection_bg = "#cc241d",
 }
 config.inactive_pane_hsb = {
 	brightness = 0.5,
@@ -130,22 +161,22 @@ config.keys = {
 	},
 	{
 		key = "LeftArrow",
-		mods = "SHIFT",
+		mods = "SHIFT|CTRL",
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
 		key = "DownArrow",
-		mods = "SHIFT",
+		mods = "SHIFT|CTRL",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
 		key = "UpArrow",
-		mods = "SHIFT",
+		mods = "SHIFT|CTRL",
 		action = act.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
 		key = "RightArrow",
-		mods = "SHIFT",
+		mods = "SHIFT|CTRL",
 		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
 	{
@@ -166,6 +197,17 @@ config.keys = {
 		mods = "ALT",
 		action = act.ScrollByLine(3),
 	},
+	{
+		key = "UpArrow",
+		mods = "ALT|SHIFT",
+		action = act.ScrollByLine(-24),
+	},
+	{
+		key = "DownArrow",
+		mods = "ALT|SHIFT",
+		action = act.ScrollByLine(12),
+	},
+
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
 	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },

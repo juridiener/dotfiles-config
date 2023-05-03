@@ -33,3 +33,7 @@ return {
     end,
   },
 }
+
+-- If som issues appear try another config.
+-- https://github.com/TheAimHero/Neovim/blob/master/lua/custom/ufo.lua
+-- https://github.com/chrisgrieser/.config/blob/main/nvim/lua/plugins/folding-plugins.lua#L39-L51

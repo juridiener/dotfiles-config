@@ -7,3 +7,5 @@ zsh/.zsh_sessions/
 .DS_Store
 **/.swp
 **/packer_compiled.lua
+aliases.sh
+.gitignore
