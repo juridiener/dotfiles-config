@@ -51,6 +51,7 @@ wezterm.on("gui-startup", function()
 		cwd = home .. "/Documents/projects/hains/hains_docker/",
 		workspace = "DOCKER",
 	})
+
 	ws_docker_tab:set_title("DOCKER")
 
 	local ws_server_tab, ws_server_pane, ws_server_window = mux.spawn_window({
@@ -58,6 +59,11 @@ wezterm.on("gui-startup", function()
 		workspace = "SERVER",
 	})
 	-- ws_server_tab:set_title("SERVER")
+
+	local ws_dev_tab, ws_dev_pane, ws_dev_window = mux.spawn_window({
+		cwd = home .. "/Documents/dev/",
+		workspace = "DEV",
+	})
 
 	local ws_config_tab, ws_config_pane, ws_config_window = mux.spawn_window({
 		cwd = home .. "/.config/",
