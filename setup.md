@@ -54,6 +54,7 @@ If any errors on checkhealth then : TSUpdate
 - npm i -g typescript typescript-language-server
 - npm i -g vim-language-server
 - yarn global add yaml-language-server
+- npm install -D eslint-config-prettier
 
 
 # Installation of tools

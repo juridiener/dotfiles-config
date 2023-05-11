@@ -24,7 +24,7 @@ local mux = wezterm.mux
 wezterm.on("gui-startup", function()
 	local home = os.getenv("HOME")
 	local tab, pane, window = mux.spawn_window({
-		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner-react-vite/",
+		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
 		workspace = "REACT",
 	})
 
@@ -64,6 +64,7 @@ wezterm.on("gui-startup", function()
 		cwd = home .. "/Documents/dev/",
 		workspace = "DEV",
 	})
+	ws_dev_tab:set_title("DEV")
 
 	local ws_config_tab, ws_config_pane, ws_config_window = mux.spawn_window({
 		cwd = home .. "/.config/",
