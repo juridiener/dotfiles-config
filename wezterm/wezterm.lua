@@ -23,13 +23,13 @@ local mux = wezterm.mux
 
 wezterm.on("gui-startup", function()
 	local home = os.getenv("HOME")
-	local tab, pane, window = mux.spawn_window({
+	local react_tab, react_pane, react_window = mux.spawn_window({
 		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
 		workspace = "REACT",
 	})
 
-	window:gui_window():maximize()
-	tab:set_title("REACT")
+	react_window:gui_window():maximize()
+	react_tab:set_title("REACT")
 
 	-- Create a new tab in the dev workspace
 	-- local ws_react_tab2 = window:spawn_tab({})
@@ -40,6 +40,9 @@ wezterm.on("gui-startup", function()
 		workspace = "API",
 	})
 	ws_api_tab:set_title("API")
+	ws_api_pane:split({ direction = "Right", size = 0.1 })
+	ws_api_tab:activate()
+	ws_api_pane:activate()
 
 	local ws_joomla_tab, ws_joomla_pane, ws_joomla_window = mux.spawn_window({
 		cwd = home .. "/Documents/projects/hains/hains_docker/hains_joomla/joomla/hains",
@@ -72,16 +75,21 @@ wezterm.on("gui-startup", function()
 	})
 	ws_config_tab:set_title("CONFIG")
 
-	tab:activate()
-	pane:split({ direction = "Right", size = 0.1 })
-	pane:activate()
+	react_tab:activate()
+	local react_right_pane = react_pane:split({
+		direction = "Right",
+		size = 0.1,
+		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
+	})
+	react_right_pane:split({
+		direction = "Bottom",
+		size = 0.4,
+		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
+	})
+	react_pane:activate()
 
 	local ws_api_tab2 = ws_api_window.spawn_tab({})
 	ws_api_tab2:set_title("Tab2")
-
-	ws_api_pane.split({ direction = "Right", size = 0.1 })
-	ws_api_tab:activate()
-	ws_api_pane:activate()
 
 	-- We want to startup in the coding workspace
 	mux.set_active_workspace("react")
