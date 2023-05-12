@@ -176,22 +176,22 @@ config.keys = {
 	},
 	{
 		key = "LeftArrow",
-		mods = "SHIFT|CTRL",
+		mods = "SHIFT",
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
 		key = "DownArrow",
-		mods = "SHIFT|CTRL",
+		mods = "SHIFT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
 		key = "UpArrow",
-		mods = "SHIFT|CTRL",
+		mods = "SHIFT",
 		action = act.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
 		key = "RightArrow",
-		mods = "SHIFT|CTRL",
+		mods = "SHIFT",
 		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
 	{
