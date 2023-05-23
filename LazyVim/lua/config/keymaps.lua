@@ -12,3 +12,8 @@ keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
 
 -- Folds
 keymap("n", "zz", "za", opts)
+
+-- remap ciw | Ciw to blackhole register
+-- so that ciw does not override yank
+keymap("n", "c", '"_c', opts)
+keymap("n", "C", '"_C', opts)
