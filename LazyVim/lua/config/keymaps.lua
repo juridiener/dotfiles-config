@@ -13,7 +13,20 @@ keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
 -- Folds
 keymap("n", "zz", "za", opts)
 
+-- Open Diffview mode
+-- :window diffthis And close :window diffoff
+-- keymap("n", "", rhs, opts)
+
 -- remap ciw | Ciw to blackhole register
 -- so that ciw does not override yank
-keymap("n", "c", '"_c', opts)
-keymap("n", "C", '"_C', opts)
+-- keymap("n", "c", '"_c', opts)
+-- keymap("n", "C", '"_C', opts)
+
+-- Resize window using <alt> arrow keys
+keymap("n", "<A-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+keymap("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+keymap("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+keymap("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+-- Don't yank on put
+vim.api.nvim_set_keymap("x", "p", 'p<cmd>let @+=@0<CR><cmd>let @"=@0<CR>', { noremap = true, silent = true })

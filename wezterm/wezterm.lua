@@ -118,7 +118,7 @@ config.window_padding = {
 }
 
 config.enable_scroll_bar = true
-config.scrollback_lines = 20000
+config.scrollback_lines = 70000
 -- config.min_scroll_bar_height = "200px"
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
@@ -220,7 +220,7 @@ config.keys = {
 	{
 		key = "DownArrow",
 		mods = "ALT|SHIFT",
-		action = act.ScrollByLine(12),
+		action = act.ScrollByLine(24),
 	},
 
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
