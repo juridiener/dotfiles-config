@@ -21,6 +21,11 @@ return {
         ["core.export"] = {},
         ["core.summary"] = {},
         ["core.integrations.telescope"] = {},
+        ["core.keybinds"] = {
+          config = {
+            neorg_leader = " ",
+          },
+        },
       },
     })
   end,
