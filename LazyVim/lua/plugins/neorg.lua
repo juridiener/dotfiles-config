@@ -12,6 +12,7 @@ return {
             workspaces = {
               notes = "~/Documents/notes",
               work = "~/Documents/notes/work",
+              private = "~/Documents/notes/private",
             },
             index = "index.norg",
             default_workspaces = "work",
