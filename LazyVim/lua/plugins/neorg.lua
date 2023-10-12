@@ -14,18 +14,22 @@ return {
               work = "~/Documents/notes/work",
               private = "~/Documents/notes/private",
             },
-            index = "index.norg",
-            default_workspaces = "work",
+            default_workspace = "work",
           },
         },
         ["core.export"] = {},
         ["core.summary"] = {},
-        ["core.integrations.telescope"] = {},
-        ["core.keybinds"] = {
+        ["core.completion"] = {
           config = {
-            neorg_leader = " ",
+            engine = "nvim-cmp",
           },
         },
+        ["core.integrations.telescope"] = {},
+        -- ["core.keybinds"] = {
+        --   config = {
+        --     neorg_leader = " ",
+        --   },
+        -- },
       },
     })
   end,

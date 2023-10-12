@@ -14,12 +14,22 @@ vim.o.foldmethod = "indent" -- Set 'indent' folding method
 vim.o.foldlevel = 1 -- Display all folds except top ones
 vim.o.foldnestmax = 10 -- Create folds only for some number of nested levels
 
--- vim.g.maplocalleader = ","
+vim.g.maplocalleader = ","
+vim.opt.timeoutlen = 1000
 
-vim.cmd([[ iabbrev ue ü ]])
-vim.cmd([[ iabbrev Ue Ü ]])
-vim.cmd([[ iabbrev oe ö ]])
-vim.cmd([[ iabbrev Oe Ö ]])
-vim.cmd([[ iabbrev ae ä ]])
-vim.cmd([[ iabbrev Ae Ä ]])
-vim.cmd([[ iabbrev sss ß ]])
+-- vim.cmd([[ iabbrev ue ü ]])
+-- vim.cmd([[ iabbrev Ue Ü ]])
+-- vim.cmd([[ iabbrev oe ö ]])
+-- vim.cmd([[ iabbrev Oe Ö ]])
+-- vim.cmd([[ iabbrev ae ä ]])
+-- vim.cmd([[ iabbrev Ae Ä ]])
+-- vim.cmd([[ iabbrev sss ß ]])
+
+-- Better way but not working inside a word
+vim.cmd.iabbrev("ue", "ü")
+vim.cmd.iabbrev("Ue", "Ü")
+vim.cmd.iabbrev("oe", "ö")
+vim.cmd.iabbrev("Oe", "Ö")
+vim.cmd.iabbrev("ae", "ä")
+vim.cmd.iabbrev("Ae", "Ä")
+vim.cmd.iabbrev("sss", "ß")

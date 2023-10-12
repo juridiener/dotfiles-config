@@ -26,26 +26,33 @@ brew install qownnotes
 
 ---
 
-#Installing neovim from source on MacOS or Linux
+#Installing and Update neovim from source on MacOS or Linux
 
 Install dependencies:
 
-- brew install pkgconfig
-- brew install cmake
-- brew install autoconf && brew install automake
+- brew install ninja libtool automake cmake pkg-config gettext
 
 ## Clone repo in $Home/ for example
 
 git clone https://github.com/neovim/neovim.git
-git checkout ... // checkout version which you want
-make CMAKE_BUILD_TYPE=Release
-sudo make install
-run nvim
-If any errors then run: PackerSync
-:checkhealth
-If any errors on checkhealth then : TSUpdate
-:checkhealth
-If any errors on checkhealth then : TSUpdate
+
+- git clone https://github.com/neovim/neovim.git
+- git checkout ... // checkout version if and which you want
+- cd neovim
+- make CMAKE_BUILD_TYPE=RelWithDebInfo
+  -- CMAKE_BUILD_TYPE=Release
+  -sudo make install
+  -- IF error (CMake Error at src/nvim/cmake_install.cmake:87 (file): file INSTALL cannot set permissions on "/usr/local/lib/nvim/": Operation not permitted. Call Stack (most recent call first): cmake_install.cmake:82 (include))
+- sudo chmod 755 /usr/local/lib/nvim/
+  -sudo make install
+- run nvim
+  :checkhealth
+  If any errors on checkhealth then : TSUpdate
+
+### Update same process if any errors then delte neovim and install from new
+
+- sudo rm /usr/local/bin/nvim
+- sudo rm -r /usr/local/share/nvim/
 
 ---
 

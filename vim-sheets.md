@@ -242,6 +242,10 @@ the cursor is on "printf":
 
 ---
 
+## Delete all lines with following Text
+
+:g/puts/norm! dd
+
 # Additional Information
 
 For example, you could select the text hello then type "ay to copy "hello" to the a register.
