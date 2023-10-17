@@ -115,3 +115,4 @@ source $ZSH/oh-my-zsh.sh
 # https://unix.stackexchange.com/questions/662972/place-tmux-configuration-in-a-different-folder
 # alias tmux='tmux -f "~/.config/tmux/tmux.conf"'
 
+export PATH="/usr/local/opt/ruby/bin:$PATH"

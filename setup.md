@@ -115,10 +115,6 @@ brew services list
 Install window manager:
 https://github.com/fikovnik/ShiftIt
 
-# For managing dotfiles:
-
-- git init --bare $HOME/dotfiles
-
 # Update a package
 
 - brew update

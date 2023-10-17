@@ -113,7 +113,7 @@ end
 config.window_padding = {
 	left = 11,
 	right = 0,
-	top = 0,
+	top = 11,
 	bottom = 0,
 }
 
@@ -124,38 +124,85 @@ config.scrollback_lines = 70000
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 16.0
 config.adjust_window_size_when_changing_font_size = false
-config.color_scheme = "Gruvbox dark, medium (base16)"
+-- config.color_scheme = "Gruvbox dark, medium (base16)"
+config.color_scheme = "dawnfox"
 
 -- config.window_background_image = '/path/to/wallpaper.jpg'
-config.window_background_opacity = 1.0
+config.window_background_opacity = 1
 
 config.window_frame = {
 	font_size = 14.0,
-
 	-- The overall background color of the tab bar when
 	-- the window is focused
-	active_titlebar_bg = "#282828",
+	active_titlebar_bg = "#ebe5df",
 
 	-- The overall background color of the tab bar when
 	-- the window is not focused
-	inactive_titlebar_bg = "#282828",
+	inactive_titlebar_bg = "#ebe5df",
 }
 
 config.colors = {
+	foreground = "#575279",
+	background = "#faf4ed",
+	cursor_bg = "#575279",
+	cursor_border = "#575279",
+	cursor_fg = "#faf4ed",
+	compose_cursor = "#d7827e",
+	selection_bg = "#d0d8d8",
+	selection_fg = "#575279",
+	scrollbar_thumb = "#a8a3b3",
+	split = "#ebe5df",
+	visual_bell = "#575279",
+
 	tab_bar = {
-		inactive_tab_edge = "#575757",
+		background = "#ebe5df",
+		inactive_tab_edge = "#ebe5df",
+		inactive_tab_edge_hover = "#ebe0df",
 		active_tab = {
-			bg_color = "#282828",
-			fg_color = "#cc241d",
-			-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
-			intensity = "Bold",
+			bg_color = "#a8a3b3",
+			fg_color = "#faf4ed",
+			intensity = "Normal",
+			italic = false,
+			strikethrough = false,
+			underline = "None",
+		},
+		inactive_tab = {
+			bg_color = "#ebe0df",
+			fg_color = "#625c87",
+			intensity = "Normal",
+			italic = false,
+			strikethrough = false,
+			underline = "None",
+		},
+		inactive_tab_hover = {
+			bg_color = "#ebdfe4",
+			fg_color = "#575279",
+			intensity = "Normal",
+			italic = false,
+			strikethrough = false,
+			underline = "None",
+		},
+		new_tab = {
+			bg_color = "#faf4ed",
+			fg_color = "#625c87",
+			intensity = "Normal",
+			italic = false,
+			strikethrough = false,
+			underline = "None",
+		},
+		new_tab_hover = {
+			bg_color = "#ebdfe4",
+			fg_color = "#575279",
+			intensity = "Normal",
+			italic = false,
+			strikethrough = false,
+			underline = "None",
 		},
 	},
-	scrollbar_thumb = "#cc241d",
-	-- selection_bg = "#cc241d",
+	-- scrollbar_thumb = "#cc241d",
 }
 config.inactive_pane_hsb = {
-	brightness = 0.5,
+	brightness = 0.90,
 }
 
 -- Wird vermutlich als default bei mac genommen

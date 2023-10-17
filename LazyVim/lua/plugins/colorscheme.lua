@@ -1,14 +1,18 @@
 return {
-  -- { "ellisonleao/gruvbox.nvim" },
-  { "rebelot/kanagawa.nvim" },
-
-  -- Configure LazyVim to load colorscheme
+  -- { "rebelot/kanagawa.nvim" },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  -- },
+  { "EdenEast/nightfox.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "gruvbox",
+      -- colorscheme = "catppuccin-latte",
+      colorscheme = "dawnfox",
       -- colorscheme = "kanagawa-wave",
-      colorscheme = "kanagawa-dragon",
+      -- colorscheme = "kanagawa-dragon",
     },
   },
 }
