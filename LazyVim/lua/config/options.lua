@@ -33,3 +33,5 @@ vim.cmd.iabbrev("Oe", "Ö")
 vim.cmd.iabbrev("ae", "ä")
 vim.cmd.iabbrev("Ae", "Ä")
 vim.cmd.iabbrev("sss", "ß")
+
+vim.cmd("hi! Visual ctermbg=NONE guibg=#eea846")
