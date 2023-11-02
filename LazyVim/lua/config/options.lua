@@ -34,4 +34,5 @@ vim.cmd.iabbrev("ae", "ä")
 vim.cmd.iabbrev("Ae", "Ä")
 vim.cmd.iabbrev("sss", "ß")
 
-vim.cmd("hi! Visual ctermbg=NONE guibg=#eea846")
+-- not working, only when sourcing the lue file
+-- vim.cmd("hi! Visual ctermbg=NONE guibg=#eea846")

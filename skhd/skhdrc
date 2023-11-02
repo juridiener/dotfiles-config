@@ -4,6 +4,10 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
+#change focus between external displays (left and right)
+alt - s: yabai -m display --focus west
+alt - g: yabai -m display --focus east
+
 # swap managed window
 shift + alt - h : yabai -m window --swap west
 shift + alt - j : yabai -m window --swap south
@@ -15,6 +19,11 @@ ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - j : yabai -m window --warp south
 ctrl + alt - k : yabai -m window --warp north
 ctrl + alt - l : yabai -m window --warp east
+
+shift + alt - up : yabai -m window --resize top:0:-20 ; yabai -m window --resize bottom:0:-20
+shift + alt - left : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
+shift + alt - down : yabai -m window --resize bottom:0:20 ; yabai -m window --resize top:0:20
+shift + alt - right : yabai -m window --resize right:20:0 ; yabai -m window --resize left:20:0
 
 # rotate tree
 alt - r : yabai -m space --rotate 90
@@ -37,8 +46,19 @@ alt - s : yabai -m window --toggle sticky;\
 alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # float / unfloat window and center on screen
-alt - d : yabai -m window --toggle float;\
-          yabai -m window --grid 4:4:1:1:2:2
+alt - d : yabai -m window --toggle float --grid 1:4:1:1:2:2
+
+# make floating window fill screen
+# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+# # make floating window fill left-half of screen
+# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+# # make floating window fill right-half of screen
+# shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+#
+# # make floating window fill top-left of screen
+# yabai -m window --grid 2:2:0:0:1:1 
+# # make floating window fill bottom-right of screen
+# yabai -m window --grid 2:2:1:1:1:1
 
 # toggle window split type
 alt - e : yabai -m window --toggle split
@@ -47,7 +67,7 @@ alt - e : yabai -m window --toggle split
 # shift + alt - 0 : yabai -m space --balance
 alt - 0 : yabai -m space --balance
 
-# move window and focus desktop
+# move application and focus desktop
 shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
 shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
 shift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3
