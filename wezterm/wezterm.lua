@@ -121,8 +121,11 @@ config.enable_scroll_bar = true
 config.scrollback_lines = 70000
 -- config.min_scroll_bar_height = "200px"
 
-config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 16.0
+-- config.font = wezterm.font("JetBrainsMono Nerd Font")
+-- config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = true, weight = "Bold" })
+config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = true })
+-- config.font = wezterm.font("Maple Mono", { italic = true })
+config.font_size = 17.0
 config.adjust_window_size_when_changing_font_size = false
 -- config.color_scheme = "Gruvbox dark, medium (base16)"
 config.color_scheme = "dawnfox"
