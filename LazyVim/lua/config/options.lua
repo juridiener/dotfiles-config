@@ -17,6 +17,12 @@ vim.o.foldnestmax = 10 -- Create folds only for some number of nested levels
 vim.g.maplocalleader = ","
 vim.opt.timeoutlen = 1000
 
+vim.opt.wrap = false
+vim.opt.expandtab = true
+vim.opt.scrolloff = 999
+vim.opt.virtualedit = "block"
+vim.opt.inccommand = "split" -- creat a split buffer for substitute command (search/replace)
+
 -- vim.cmd([[ iabbrev ue ü ]])
 -- vim.cmd([[ iabbrev Ue Ü ]])
 -- vim.cmd([[ iabbrev oe ö ]])
