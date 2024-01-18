@@ -5,7 +5,7 @@
 -- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
-local opts = { silent = true }
+local opts = { silent = true, noremap = true }
 
 keymap("i", "jk", "<ESC>", opts)
 keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
@@ -29,4 +29,6 @@ keymap("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window
 keymap("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Don't yank on put
-vim.api.nvim_set_keymap("x", "p", 'p<cmd>let @+=@0<CR><cmd>let @"=@0<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "p", 'p<cmd>let @+=@0<CR><cmd>let @"=@0<CR>', opts)
+
+vim.api.nvim_set_keymap("n", "<Leader>!", ":lua require('neogen').generate()<CR>", opts)
