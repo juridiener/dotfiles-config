@@ -28,6 +28,9 @@ keymap("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" 
 keymap("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 keymap("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
+--
+keymap("n", "M", vim.diagnostic.open_float)
+
 -- Don't yank on put
 vim.api.nvim_set_keymap("x", "p", 'p<cmd>let @+=@0<CR><cmd>let @"=@0<CR>', opts)
 
