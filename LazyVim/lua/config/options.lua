@@ -42,3 +42,14 @@ vim.cmd.iabbrev("sss", "ß")
 
 -- not working, only when sourcing the lue file
 -- vim.cmd("hi! Visual ctermbg=NONE guibg=#eea846")
+
+vim.o.grepprg = "rg --vimgrep --hidden -g !.git"
+
+-- Ignore some folders and files with find
+vim.opt.wildignore = {
+  "**/node_modules/**",
+  "**/coverage/**",
+  "**/.idea/**",
+  "**/.git/**",
+  "**/.nuxt/**",
+}

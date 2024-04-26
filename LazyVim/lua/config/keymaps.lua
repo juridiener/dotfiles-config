@@ -30,6 +30,7 @@ keymap("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase windo
 
 --
 keymap("n", "M", vim.diagnostic.open_float)
+keymap("n", "<leader>,", ":silent grep ", { silent = false })
 
 -- Don't yank on put
 vim.api.nvim_set_keymap("x", "p", 'p<cmd>let @+=@0<CR><cmd>let @"=@0<CR>', opts)
