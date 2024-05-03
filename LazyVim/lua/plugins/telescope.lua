@@ -38,31 +38,32 @@ return {
   },
 
   cmd = "Telescope",
+
   opts = {
     defaults = {
       -- file_ignore_patterns = { "^.git/.*$", "^.repro/.*$" },
-      vimgrep_arguments = {
-        "rg",
-        "--follow", -- Follow symbolic links
-        "--hidden", -- Search for hidden files
-        "--no-heading", -- Don't group matches by each file
-        "--with-filename", -- Print the file path with the matched lines
-        "--line-number", -- Show line numbers
-        "--column", -- Show column numbers
-        "--smart-case", -- Smart case search
+      -- vimgrep_arguments = {
+      -- "rg",
+      -- "--follow", -- Follow symbolic links
+      -- "--hidden", -- Search for hidden files
+      -- "--no-heading", -- Don't group matches by each file
+      -- "--with-filename", -- Print the file path with the matched lines
+      -- "--line-number", -- Show line numbers
+      -- "--column", -- Show column numbers
+      -- "--smart-case", -- Smart case search
 
-        -- Exclude some patterns from search
-        "--glob=!**/.git/*",
-        "--glob=!**/.idea/*",
-        "--glob=!**/.vscode/*",
-        "--glob=!**/.repro/*",
-        "--glob=!**/LazyVim/.repro/*",
-        "--glob=!**/build/*",
-        "--glob=!**/dist/*",
-        "--glob=!**/yarn.lock",
-        "--glob=!**/package-lock.json",
-      },
-      layout_strategy = "horizontal",
+      -- Exclude some patterns from search
+      -- "--glob=!**/.git/*",
+      -- "--glob=!**/.idea/*",
+      -- "--glob=!**/.vscode/*",
+      -- "--glob=!**/.repro/*",
+      -- "--glob=!**/LazyVim/.repro/*",
+      -- "--glob=!**/build/*",
+      -- "--glob=!**/dist/*",
+      -- "--glob=!**/yarn.lock",
+      -- "--glob=!**/package-lock.json",
+      -- },
+      layout_strategy = "vertical",
       -- layout_config = { height = 10 },
       -- layout_config = { prompt_position = "top" },
       sorting_strategy = "ascending",
@@ -107,24 +108,24 @@ return {
     },
     pickers = {
       find_files = {
+        theme = "dropdown",
         -- hidden = true,
         -- needed to exclude some files & dirs from general search
         -- when not included or specified in .gitignore
-        find_command = {
-          "rg",
-          "--files",
-          "--hidden",
-          "--glob=!**/.git/*",
-          "--glob=!**/.idea/*",
-          "--glob=!**/.vscode/*",
-          "--glob=!**/.repro/*",
-          "--glob=!**/.repro/*",
-          "--glob=!**/LazyVim/.repro/*",
-          "--glob=!**/build/*",
-          "--glob=!**/dist/*",
-          "--glob=!**/yarn.lock",
-          "--glob=!**/package-lock.json",
-        },
+        -- find_command = {
+        --   "rg",
+        --   "--files",
+        --   "--hidden",
+        --   "--glob=!**/.git/*",
+        --   "--glob=!**/.idea/*",
+        --   "--glob=!**/.vscode/*",
+        --   "--glob=!**/.repro/*",
+        --   "--glob=!**/LazyVim/.repro/*",
+        --   "--glob=!**/build/*",
+        --   "--glob=!**/dist/*",
+        --   "--glob=!**/yarn.lock",
+        --   "--glob=!**/package-lock.json",
+        -- },
       },
       live_grep = {
         mappings = {

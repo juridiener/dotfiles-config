@@ -53,3 +53,5 @@ vim.opt.wildignore = {
   "**/.git/**",
   "**/.nuxt/**",
 }
+
+vim.g.root_spec = { "cwd" }
