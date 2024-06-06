@@ -36,6 +36,27 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
+  keys = {
+    {
+      "<leader>fs",
+      function()
+        require("telescope.builtin").lsp_document_symbols({
+          -- symbols = require("lazyvim.config").get_kind_filter(),
+          symbols = { "function", "method", "constant", "class", "constructor", "interface" },
+        })
+      end,
+      desc = "Goto Symbol",
+    },
+    {
+      "<leader>fS",
+      function()
+        require("telescope.builtin").lsp_workspace_symbols({
+          symbols = { "function", "method", "constant", "class", "constructor", "interface" },
+        })
+      end,
+      desc = "Goto Symbol",
+    },
+  },
 
   cmd = "Telescope",
 
