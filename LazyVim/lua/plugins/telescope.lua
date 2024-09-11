@@ -129,6 +129,7 @@ return {
     },
     pickers = {
       find_files = {
+        find_command = { "rg", "--files", "--sortr=modified" },
         theme = "dropdown",
         -- hidden = true,
         -- needed to exclude some files & dirs from general search

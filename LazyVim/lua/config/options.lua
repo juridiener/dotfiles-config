@@ -10,17 +10,14 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = false -- enable persistent undo
 -- END UNDO TRREE
 
-vim.o.foldmethod = "indent" -- Set 'indent' folding method
-vim.o.foldlevel = 1 -- Display all folds except top ones
-vim.o.foldnestmax = 10 -- Create folds only for some number of nested levels
-
 vim.g.maplocalleader = ","
 vim.opt.timeoutlen = 1000
 
 vim.opt.wrap = false
 vim.opt.expandtab = true
-vim.opt.scrolloff = 999
-vim.opt.virtualedit = "block"
+-- if set to 999 then the cursor stays always in the middle.
+vim.opt.scrolloff = 4
+-- vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split" -- creat a split buffer for substitute command (search/replace)
 
 -- vim.cmd([[ iabbrev ue ü ]])
@@ -55,3 +52,7 @@ vim.opt.wildignore = {
 }
 
 vim.g.root_spec = { "cwd" }
+
+-- vim.lsp.inlay_hint.enable = function(bufnr)
+--   return false
+-- end

@@ -35,4 +35,4 @@ keymap("n", "<leader>,", ":silent grep ", { silent = false })
 -- Don't yank on put
 vim.api.nvim_set_keymap("x", "p", 'p<cmd>let @+=@0<CR><cmd>let @"=@0<CR>', opts)
 
-vim.api.nvim_set_keymap("n", "<Leader>!", ":lua require('neogen').generate()<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "<Leader>!", ":lua require('neogen').generate()<CR>", opts)

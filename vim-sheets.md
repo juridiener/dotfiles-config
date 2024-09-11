@@ -89,6 +89,43 @@ Search in a specific directory
 
 :cdo s/searchText/replaceText/ | update
 
+// https://www.youtube.com/watch?v=6Pu0V0tdT8w&list=PLfDYHelvG44BNGMqjVizsKFpJRsrmqfsJ&index=2
+
+### Atoms can be counted with {n}
+
+'.' => Matches any single character
+'.\*' => Matches zero or more of any character
+'.+' => Matches one or more of any character
+'()' => Matches group
+'\w' => Matches any word
+'\d' => Matches any digit
+'\s' => Matches any whitespace
+'\v' => Magic mode
+'\r' => Matches a newline
+'\zs' => use patterns to find a position but only include what comes after match
+'\ze' => use patterns to find a position but only include what comes before match
+'/\%V' => match inside a visual selection
+
+'&' => the word which was searched for, like placeholder
+
+Example 1: Onxe replace to Once
+
+- :%s/^On\zs\w/c
+- %s => whole file
+- ^ => beginning of the line
+- zs => every after On
+- w => single character
+- /c => replace that single character with 'c'
+
+Example 2: Once upon a time, in a land far, far way replace to Once upon a very long time, ....
+%s/\vOnce\zs(.\*)\zetime/& very long
+
+---> look at the video at 21:00 for more information
+:g stand for global, it executes a command on all lines that match the search pattern
+:g/^$/d => delete empty lines
+:g/search_string/norm gU$ => Convert matching lines to uppercase
+:v/old/new/g => negate the search pattern
+
 ### Jump through quickfix list
 
 "open bracket [q" = prev
@@ -225,6 +262,18 @@ Macro only execute the macro in the selection with a pattern.
    e. :g/row/ norm @m = execute macro on selection
 
 ---
+
+If the Macro adds new lines or deletes line, then it would not work soemthing like this @4q
+To repeat the macro number of times you have to select the content and going to command mode.
+
+Example: Select lines gives you following after pressing : '<,'>
+
+- '<,'>g/^/norm! @q
+- '<,'> => Are the selected lines
+- g => global
+- ^ => every line in the selection
+- norm! => execute only my macro
+- @q => macro in register q
 
 http://vimdoc.sourceforge.net/htmldoc/usr_30.html
 

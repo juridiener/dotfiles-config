@@ -12,6 +12,18 @@ vim.api.nvim_create_autocmd({ "FocusLost" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+  pattern = { "*.*" },
+  desc = "Save view (folds), when closing file",
+  command = "mkview",
+})
+
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  pattern = { "*.*" },
+  desc = "Load view (folds), when opening file",
+  command = "silent! loadview",
+})
+
 -- vim.api.nvim_create_augroup("InnerAbbreviations", { clear = true })
 --
 -- local abbreviations = {

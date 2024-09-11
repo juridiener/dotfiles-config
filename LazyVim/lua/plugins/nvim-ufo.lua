@@ -33,6 +33,13 @@ return {
         provider_selector = function(bufnr, filetype, buftype)
           return { "lsp", "indent" }
         end,
+        close_fold_kinds_for_ft = {
+          default = { "imports", "comment" },
+          -- You can specify different kinds for specific filetypes
+          -- python = {'imports'},
+          -- javascript = {'imports', 'comment', 'function'},
+        },
+        open_fold_hl_timeout = 150,
       })
     end,
   },

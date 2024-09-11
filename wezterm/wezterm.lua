@@ -76,17 +76,17 @@ wezterm.on("gui-startup", function()
 	ws_config_tab:set_title("CONFIG")
 
 	react_tab:activate()
-	local react_right_pane = react_pane:split({
-		direction = "Right",
-		size = 0.1,
-		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
-	})
-	react_right_pane:split({
-		direction = "Bottom",
-		size = 0.4,
-		cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
-	})
-	react_pane:activate()
+	-- local react_right_pane = react_pane:split({
+	-- 	direction = "Right",
+	-- 	size = 0.1,
+	-- 	cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
+	-- })
+	-- react_right_pane:split({
+	-- 	direction = "Bottom",
+	-- 	size = 0.4,
+	-- 	cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
+	-- })
+	-- react_pane:activate()
 
 	local ws_api_tab2 = ws_api_window.spawn_tab({})
 	ws_api_tab2:set_title("Tab2")
