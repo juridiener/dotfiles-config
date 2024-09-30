@@ -22,6 +22,9 @@ alias cdg='cd $(git rev-parse --show-cdup)'
 alias nvim='NVIM_APPNAME=LazyVim nvim'
 alias nvim-my='NVIM_APPNAME=nvim nvim'
 
+alias aider='aider --model ollama/llama3.1'
+alias aider-dsc='aider --model ollama/deepseek-coder-v2'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -116,3 +119,5 @@ source $ZSH/oh-my-zsh.sh
 # alias tmux='tmux -f "~/.config/tmux/tmux.conf"'
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export OLLAMA_API_BASE="http://localhost:11434"
+

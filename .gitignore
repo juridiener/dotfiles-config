@@ -8,4 +8,6 @@ zsh/.zsh_sessions/
 **/.swp
 **/packer_compiled.lua
 aliases.sh
+zsh/aliases.sh
+**/aliases.sh
 .gitignore
