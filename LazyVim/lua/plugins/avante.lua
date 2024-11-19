@@ -52,7 +52,7 @@ return {
       config = function()
         require("copilot").setup({
           -- Add your Copilot configuration here
-          suggestion = { enabled = false },
+          suggestion = { enabled = true },
           panel = { enabled = false },
         })
       end,

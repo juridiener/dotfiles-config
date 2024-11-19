@@ -11,3 +11,7 @@ aliases.sh
 zsh/aliases.sh
 **/aliases.sh
 .gitignore
+.github-copilot/
+github-copilot/
+.github-copilot/*
+github-copilot/*
