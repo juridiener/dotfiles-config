@@ -24,6 +24,13 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   command = "silent! loadview",
 })
 
+-- -- Apply colorscheme on VimEnter
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     vim.cmd("colorscheme poimandres")
+--   end,
+-- })
+
 -- vim.api.nvim_create_augroup("InnerAbbreviations", { clear = true })
 --
 -- local abbreviations = {

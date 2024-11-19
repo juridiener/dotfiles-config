@@ -19,14 +19,7 @@ vim.opt.expandtab = true
 vim.opt.scrolloff = 4
 -- vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split" -- creat a split buffer for substitute command (search/replace)
-
--- vim.cmd([[ iabbrev ue ü ]])
--- vim.cmd([[ iabbrev Ue Ü ]])
--- vim.cmd([[ iabbrev oe ö ]])
--- vim.cmd([[ iabbrev Oe Ö ]])
--- vim.cmd([[ iabbrev ae ä ]])
--- vim.cmd([[ iabbrev Ae Ä ]])
--- vim.cmd([[ iabbrev sss ß ]])
+vim.opt.termguicolors = true
 
 -- Better way but not working inside a word
 vim.cmd.iabbrev("ue", "ü")
@@ -56,3 +49,6 @@ vim.g.root_spec = { "cwd" }
 -- vim.lsp.inlay_hint.enable = function(bufnr)
 --   return false
 -- end
+--
+--
+vim.lsp.inlay_hint.enable(false)

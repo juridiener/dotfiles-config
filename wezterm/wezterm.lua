@@ -4,23 +4,6 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local mux = wezterm.mux
 
--- wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
--- 	local numpanes = ""
--- 	if #tab.panes > 1 then
--- 		numpanes = "(" .. tostring(#tab.panes) .. ") "
--- 	end
--- 	return numpanes .. tab.active_pane.title
--- end)
---
--- -- format window title
--- wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
--- 	local numtabs = ""
--- 	if #tabs > 1 then
--- 		numtabs = "(" .. tostring(#tabs) .. ") "
--- 	end
--- 	return numtabs .. tab.active_pane.title
--- end)
-
 wezterm.on("gui-startup", function()
 	local home = os.getenv("HOME")
 	local react_tab, react_pane, react_window = mux.spawn_window({
@@ -76,17 +59,6 @@ wezterm.on("gui-startup", function()
 	ws_config_tab:set_title("CONFIG")
 
 	react_tab:activate()
-	-- local react_right_pane = react_pane:split({
-	-- 	direction = "Right",
-	-- 	size = 0.1,
-	-- 	cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
-	-- })
-	-- react_right_pane:split({
-	-- 	direction = "Bottom",
-	-- 	size = 0.4,
-	-- 	cwd = home .. "/Documents/projects/hains/hains_docker/dienstplaner/",
-	-- })
-	-- react_pane:activate()
 
 	local ws_api_tab2 = ws_api_window.spawn_tab({})
 	ws_api_tab2:set_title("Tab2")
@@ -95,12 +67,6 @@ wezterm.on("gui-startup", function()
 	mux.set_active_workspace("react")
 end)
 
--- wezterm.on("new-tab-button-click", function(window, pane, button, default_action)
--- 	-- just log the default action and allow wezterm to perform it
--- 	wezterm.log_info("new-tab", window, pane, button, default_action)
--- end)
-
--- This table will hold the configuration.
 local config = {}
 config.audible_bell = "Disabled"
 
@@ -119,91 +85,43 @@ config.window_padding = {
 
 config.enable_scroll_bar = true
 config.scrollback_lines = 70000
--- config.min_scroll_bar_height = "200px"
 
--- config.font = wezterm.font("JetBrainsMono Nerd Font")
--- config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = true, weight = "Bold" })
 config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = true })
--- config.font = wezterm.font("Maple Mono", { italic = true })
 config.font_size = 17.0
 config.adjust_window_size_when_changing_font_size = false
--- config.color_scheme = "Gruvbox dark, medium (base16)"
-config.color_scheme = "dawnfox"
+-- config.color_scheme = "Poimandres"
+config.color_scheme = "Rosé Pine (base16)"
+
+config.colors = {
+	tab_bar = {
+		background = "#1b1e28",
+		active_tab = {
+			bg_color = "#1b1e28",
+			fg_color = "#a6accd",
+		},
+		inactive_tab = {
+			bg_color = "#1b1e28",
+			fg_color = "#767c9d",
+		},
+		inactive_tab_hover = {
+			bg_color = "#1b1e28",
+			fg_color = "#a6accd",
+		},
+		new_tab = {
+			bg_color = "#1b1e28",
+			fg_color = "#767c9d",
+		},
+		new_tab_hover = {
+			bg_color = "#1b1e28",
+			fg_color = "#a6accd",
+			italic = true,
+		},
+	},
+}
 
 -- config.window_background_image = '/path/to/wallpaper.jpg'
 config.window_background_opacity = 1
 
-config.window_frame = {
-	font_size = 14.0,
-	-- The overall background color of the tab bar when
-	-- the window is focused
-	active_titlebar_bg = "#ebe5df",
-
-	-- The overall background color of the tab bar when
-	-- the window is not focused
-	inactive_titlebar_bg = "#ebe5df",
-}
-
-config.colors = {
-	foreground = "#575279",
-	background = "#faf4ed",
-	cursor_bg = "#575279",
-	cursor_border = "#575279",
-	cursor_fg = "#faf4ed",
-	compose_cursor = "#d7827e",
-	selection_bg = "#d0d8d8",
-	selection_fg = "#575279",
-	scrollbar_thumb = "#a8a3b3",
-	split = "#ebe5df",
-	visual_bell = "#575279",
-
-	tab_bar = {
-		background = "#ebe5df",
-		inactive_tab_edge = "#ebe5df",
-		inactive_tab_edge_hover = "#ebe0df",
-		active_tab = {
-			bg_color = "#a8a3b3",
-			fg_color = "#faf4ed",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-		inactive_tab = {
-			bg_color = "#ebe0df",
-			fg_color = "#625c87",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-		inactive_tab_hover = {
-			bg_color = "#ebdfe4",
-			fg_color = "#575279",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-		new_tab = {
-			bg_color = "#faf4ed",
-			fg_color = "#625c87",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-		new_tab_hover = {
-			bg_color = "#ebdfe4",
-			fg_color = "#575279",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-	},
-	-- scrollbar_thumb = "#cc241d",
-}
 config.inactive_pane_hsb = {
 	brightness = 0.90,
 }
