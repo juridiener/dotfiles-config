@@ -91,6 +91,7 @@ config.font_size = 17.0
 config.adjust_window_size_when_changing_font_size = false
 -- config.color_scheme = "Poimandres"
 config.color_scheme = "Rosé Pine (base16)"
+config.max_fps = 120
 
 config.colors = {
 	tab_bar = {
