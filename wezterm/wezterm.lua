@@ -52,6 +52,12 @@ wezterm.on("gui-startup", function()
 	})
 	ws_dev_tab:set_title("DEV")
 
+	local ws_monorepo_tab, ws_monorepo_pane, ws_monorepo_window = mux.spawn_window({
+		cwd = home .. "/Documents/projects/hains/hains_docker/monorepo/",
+		workspace = "MONOREPO",
+	})
+	ws_dev_tab:set_title("MONOREPO")
+
 	local ws_config_tab, ws_config_pane, ws_config_window = mux.spawn_window({
 		cwd = home .. "/.config/",
 		workspace = "CONFIG",

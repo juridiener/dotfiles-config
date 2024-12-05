@@ -62,7 +62,7 @@ return {
 
   opts = {
     defaults = {
-      -- file_ignore_patterns = { "^.git/.*$", "^.repro/.*$" },
+      file_ignore_patterns = { "^.git/.*$", "^.repro/.*$", "node_modules" },
       -- vimgrep_arguments = {
       -- "rg",
       -- "--follow", -- Follow symbolic links
