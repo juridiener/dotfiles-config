@@ -29,12 +29,12 @@ return {
           },
           ["core.export"] = {},
           ["core.summary"] = {},
-          ["core.completion"] = {
-            config = {
-              engine = "nvim-cmp",
-              name = "[Neorg]",
-            },
-          },
+          -- ["core.completion"] = {
+          --   config = {
+          --     engine = "nvim-cmp",
+          --     name = "[Neorg]",
+          --   },
+          -- },
           -- ["core.keybinds"] = {
           --   config = {
           --     neorg_leader = " ",
