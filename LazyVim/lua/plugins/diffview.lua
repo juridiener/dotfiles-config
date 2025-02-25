@@ -11,9 +11,11 @@ return {
     },
   },
   keys = {
-    { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Open Git in Diffview" },
-    { "<leader>gq", "<cmd>DiffviewClose<cr>", desc = "Close Git Diffview" },
-    { "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "History for the current branch" },
-    { "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", desc = "History for the current file" },
+    { "<leader>gdd", "<cmd>DiffviewOpen<cr>", desc = "Open Git in Diffview" },
+    { "<leader>gdr", "<cmd>DiffviewOpen origin/main...HEAD<cr>", desc = "Check remote main with current" },
+    { "<leader>gdc", "<cmd>DiffviewOpen HEAD...origin/main<cr>", desc = "Check current with remote main" },
+    { "<leader>gdq", "<cmd>DiffviewClose<cr>", desc = "Close Git Diffview" },
+    { "<leader>gdH", "<cmd>DiffviewFileHistory<cr>", desc = "History for the current branch" },
+    { "<leader>gdh", "<cmd>DiffviewFileHistory %<cr>", desc = "History for the current file" },
   },
 }
