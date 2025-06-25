@@ -21,8 +21,8 @@ return {
       preset = "enter",
       ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
       ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
-      ["<S-k>"] = { "scroll_documentation_up" },
-      ["<S-j>"] = { "scroll_documentation_down" },
+      ["<A-k>"] = { "scroll_documentation_up" },
+      ["<A-j>"] = { "scroll_documentation_down" },
     },
     completion = {
       list = {
@@ -31,9 +31,9 @@ return {
     },
     sources = {
       -- vailable in all filetypes by default
-      -- default = { "lsp", "path", "lazydev", "dictionary", "thesaurus" },
+      default = { "lsp", "path", "lazydev", "dictionary", "thesaurus" },
 
-      default = { "lsp", "path", "lazydev" }, -- add any sources you want
+      -- default = { "lsp", "path", "lazydev" }, -- add any sources you want
       providers = {
         thesaurus = {
           name = "blink-cmp-words",
@@ -53,12 +53,12 @@ return {
           },
         },
       },
-      per_filetype = {
-        text = { "dictionary" },
-        markdown = { "thesaurus" },
-        javascript = { "dictionary", "thesaurus" },
-        typescript = { "dictionary", "thesaurus" },
-      },
+      -- per_filetype = {
+      --   text = { "dictionary" },
+      --   markdown = { "thesaurus" },
+      --   javascript = { "dictionary", "thesaurus" },
+      --   typescript = { "dictionary", "thesaurus" },
+      -- },
     },
   },
 }
