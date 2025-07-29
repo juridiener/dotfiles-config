@@ -24,16 +24,15 @@ return {
                 work = "~/Documents/notes/work",
                 private = "~/Documents/notes/private",
               },
-              default_workspace = "work",
+              default_workspace = "notes",
             },
           },
           ["core.export"] = {},
           ["core.summary"] = {},
           -- ["core.completion"] = {
-          --   config = {
-          --     engine = "nvim-cmp",
-          --     name = "[Neorg]",
-          --   },
+          -- config = {
+          --   engine = "blink", -- currently not supported
+          -- },
           -- },
           -- ["core.keybinds"] = {
           --   config = {
@@ -42,6 +41,8 @@ return {
           -- },
         },
       })
+      vim.wo.foldlevel = 99
+      vim.wo.conceallevel = 2
     end,
   },
 }

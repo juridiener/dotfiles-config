@@ -1,18 +1,3 @@
--- return {
---   "saghen/blink.cmp",
---   opts = {
---     keymap = {
---       preset = "enter",
---       ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
---       ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
---     },
---     completion = {
---       list = {
---         selection = { auto_insert = true, preselect = true },
---       },
---     },
---   },
--- }
 return {
   "saghen/blink.cmp",
   dependencies = { "archie-judd/blink-cmp-words" },
@@ -35,6 +20,12 @@ return {
 
       -- default = { "lsp", "path", "lazydev" }, -- add any sources you want
       providers = {
+        -- neorg = {
+        --   name = "neorg",
+        --   enabled = function()
+        --     return vim.bo.filetype == "norg"
+        --   end,
+        -- },
         thesaurus = {
           name = "blink-cmp-words",
           module = "blink-cmp-words.thesaurus",
