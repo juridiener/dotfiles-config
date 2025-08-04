@@ -48,6 +48,10 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+
+(package! base16-theme)
+
+
 ;; Editing
 (package! colorful-mode)
 (package! rainbow-delimiters)
@@ -66,7 +70,7 @@
 (package! org-superstar)
 
 ;; Checkers
-(package! flymake-eslint)
+;; (package! flymake-eslint)
 
 ;; Web
 (package! web-mode)
@@ -82,5 +86,5 @@
   (package! eldoc :built-in t))
 
 ;; (package! eglot-booster)
-(package! eglot-booster :recipe (:type git
-                                 :repo "https://github.com/jdtsmith/eglot-booster.git"))
+;; (package! eglot-booster :recipe (:type git
+;;                                  :repo "https://github.com/jdtsmith/eglot-booster.git"))
