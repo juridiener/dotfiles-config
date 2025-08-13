@@ -110,6 +110,7 @@
                                      diags)))))
             (run-at-time 0.5 nil #'my/show-error-at-point)))
 
+
 ;; Enable eglot in these programming modes:
 (use-package! eglot
   :hook ((js-mode . eglot-ensure)
