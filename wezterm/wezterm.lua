@@ -78,7 +78,7 @@ config.send_composed_key_when_left_alt_is_pressed = true
 config.send_composed_key_when_right_alt_is_pressed = true
 
 config.window_padding = {
-	left = 11,
+	left = 0,
 	right = 0,
 	top = 11,
 	bottom = 0,

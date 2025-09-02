@@ -3,6 +3,20 @@
   "theme": "system",
   "autoupdate": true,
   "permission": {
-    "bash": "ask"
+    "bash": {
+      "*install*": "deny",
+      "*uninstall*": "deny",
+      "*rm*": "deny",
+      "*rmdir*": "deny",
+      "*del*": "deny",
+      "*": "allow"
+    }
+  },
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest"],
+      "enabled": true
+    }
   }
 }
