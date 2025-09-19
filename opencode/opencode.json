@@ -4,14 +4,43 @@
   "autoupdate": true,
   "permission": {
     "bash": {
+      "*": "allow",
       "*install*": "deny",
       "*uninstall*": "deny",
       "*rm*": "deny",
       "*rmdir*": "deny",
       "*del*": "deny",
-      "*": "allow"
+      "git add*": "deny",
+      "git commit*": "deny",
+      "git push*": "deny",
+      "git pull*": "deny",
+      "git merge*": "deny",
+      "git rebase*": "deny",
+      "git reset*": "deny",
+      "git checkout*": "deny",
+      "git switch*": "deny",
+      "git cherry-pick*": "deny",
+      "git revert*": "deny",
+      "git clean*": "deny",
+      "git stash*": "deny",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git diff*": "allow",
+      "git status*": "allow",
+      "git tag*": "allow",
+      "git cat-file*": "allow",
+      "git ls-tree*": "allow",
+      "git ls-files*": "allow",
+      "git blame*": "allow",
+      "git whatchanged*": "allow",
+      "git rev-list*": "allow",
+      "git shortlog*": "allow",
+      "git rev-parse*": "allow",
+      "git describe*": "allow",
+      "git name-rev*": "allow"
     }
   },
+
   "mcp": {
     "playwright": {
       "type": "local",
