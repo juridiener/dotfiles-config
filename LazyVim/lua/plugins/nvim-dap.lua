@@ -1,7 +1,7 @@
 return {
   {
     "mfussenegger/nvim-dap",
-    dependencies = { "williamboman/mason.nvim" },
+    dependencies = { "mason-org/mason.nvim" },
     opts = function()
       local dap = require("dap")
 
