@@ -36,3 +36,16 @@ keymap("n", "<leader>,", ":silent grep ", { silent = false })
 vim.api.nvim_set_keymap("x", "p", 'p<cmd>let @+=@0<CR><cmd>let @"=@0<CR>', opts)
 
 -- vim.api.nvim_set_keymap("n", "<Leader>!", ":lua require('neogen').generate()<CR>", opts)
+--
+-- Git Historu of current buffer
+keymap("n", "<leader>gvh", function()
+  require("vgit").buffer_history_preview()
+end, { desc = "Git history of current file", silent = true })
+
+keymap("n", "<leader>gvl", function()
+  require("vgit").project_logs_preview()
+end, { desc = "Project log", silent = true })
+
+keymap("n", "<leader>gvp", function()
+  require("vgit").project_diff_preview()
+end, { desc = "Project diff modiefied files", silent = true })
