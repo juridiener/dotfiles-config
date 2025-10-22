@@ -54,9 +54,9 @@ function M.run_tsc_build(tsconfig_path)
       else
         vim.schedule(function()
           vim.cmd("Trouble quickfix")
-          vim.keymap.set("n", "q", function()
+          vim.keymap.set("n", "<Esc>", function()
             vim.cmd("Trouble quickfix close")
-            vim.keymap.del("n", "q")
+            vim.keymap.del("n", "<Esc>")
           end, { silent = true, desc = "Close TypeScript Trouble" })
         end)
       end
