@@ -10,6 +10,8 @@
       "*rm*": "deny",
       "*rmdir*": "deny",
       "*del*": "deny",
+      "*build*": "ask",
+      "*nx*": "deny",
       "git add*": "deny",
       "git commit*": "deny",
       "git push*": "deny",
@@ -53,6 +55,11 @@
       "headers": {
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       },
+      "enabled": true
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
       "enabled": true
     }
   }

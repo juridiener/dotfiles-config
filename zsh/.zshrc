@@ -11,8 +11,7 @@ export TERM=screen-256color
 ZSH_THEME="robbyrussell"
 
 # open all files in neovim that are not staged and modified
-alias nvim-git-fm='nvim $(git diff --name-only)'
-
+alias nvim-gitdiff='nvim $(git diff --name-only)'
 # goes to directory where git repo is initialized
 alias cdg='cd $(git rev-parse --show-cdup)'
 

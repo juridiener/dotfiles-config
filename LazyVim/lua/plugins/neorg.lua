@@ -1,13 +1,14 @@
 return {
-  {
-    "vhyrro/luarocks.nvim",
-    priority = 1000, -- We'd like this plugin to load first out of the rest
-    config = true, -- This automatically runs `require("luarocks-nvim").setup()`
-  },
+  -- {
+  --   "vhyrro/luarocks.nvim",
+  --   priority = 1000, -- We'd like this plugin to load first out of the rest
+  --   config = true, -- This automatically runs `require("luarocks-nvim").setup()`
+  -- },
   {
 
     "nvim-neorg/neorg",
-    dependencies = { "luarocks.nvim" },
+    lazy = false,
+    dependencies = { "nvim-treesitter/nvim-treesitter", "vhyrro/luarocks.nvim" },
     config = function()
       require("neorg").setup({
         load = {
@@ -17,6 +18,12 @@ return {
               icon_preset = "basic",
             },
           }, -- Adds pretty icons to your documents
+          ["core.integrations.treesitter"] = {
+            config = {
+              install_parsers = true,
+              configure_parsers = true,
+            },
+          },
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {
@@ -29,6 +36,7 @@ return {
           },
           ["core.export"] = {},
           ["core.summary"] = {},
+          ["core.syntax"] = {},
           -- ["core.completion"] = {
           -- config = {
           --   engine = "blink", -- currently not supported
