@@ -50,3 +50,6 @@ vim.keymap.set(
   typescript.pick_tsconfig_and_run,
   { desc = "Choose tsconfig.json and run TypeScript check" }
 )
+
+-- orgmode
+keymap("n", "<leader>oi", ":e ~/.config/notes/index.org<CR>", { desc = "Open index.org" })

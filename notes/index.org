@@ -1,0 +1,8 @@
+* Notes Index
+
+- [[file:commands.org][Commands]]
+- [[file:css.org][CSS]]
+- [[file:javascript.org][JavaScript]]
+- [[file:react.org][React]]
+- [[file:setup.org][Setup]]
+- [[file:typescript.org][TypeScript]]
