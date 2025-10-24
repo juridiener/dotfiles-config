@@ -18,12 +18,6 @@ return {
               icon_preset = "basic",
             },
           }, -- Adds pretty icons to your documents
-          ["core.integrations.treesitter"] = {
-            config = {
-              install_parsers = true,
-              configure_parsers = true,
-            },
-          },
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {
