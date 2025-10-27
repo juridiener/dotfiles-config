@@ -3,7 +3,13 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    require("vgit").setup()
+    require("vgit").setup({
+      settings = {
+        live_blame = {
+          enabled = false,
+        },
+      },
+    })
   end,
   keys = {
     {
