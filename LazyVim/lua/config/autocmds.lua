@@ -51,53 +51,54 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- for folding without nvim-ufo
--- vim.o.foldmethod = 'expr'
--- -- Default to treesitter folding
--- vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
--- -- Prefer LSP folding if client supports it
--- vim.api.nvim_create_autocmd('LspAttach', {
---     callback = function(args)
---          local client = vim.lsp.get_client_by_id(args.data.client_id)
---          if client:supports_method('textDocument/foldingRange') then
---              local win = vim.api.nvim_get_current_win()
---              vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
---         end
---     end,
---  })
+-- no auto continue comments on new line
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("no_auto_comment", {}),
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
 
--- -- Apply colorscheme on VimEnter
--- vim.api.nvim_create_autocmd("VimEnter", {
---   callback = function()
---     vim.cmd("colorscheme poimandres")
---   end,
--- })
+-- syntax highlighting for dotenv files
+vim.api.nvim_create_autocmd("BufRead", {
+  group = vim.api.nvim_create_augroup("dotenv_ft", { clear = true }),
+  pattern = { ".env", ".env.*" },
+  callback = function()
+    vim.bo.filetype = "dosini"
+  end,
+})
 
--- vim.api.nvim_create_augroup("InnerAbbreviations", { clear = true })
---
--- local abbreviations = {
---   ue = "ü",
---   Ue = "Ü",
---   oe = "ö",
---   Oe = "Ö",
---   ae = "ä",
---   Ae = "Ä",
---   sss = "ß",
--- }
---
--- vim.api.nvim_create_autocmd("TextChangedI", {
---   pattern = "*",
---   group = "InnerAbbreviations",
---   callback = function()
---     local col = vim.fn.col(".")
---     local line = vim.fn.getline(".")
---     local leading = string.sub(line, 1, col - 1)
---
---     for abbr, replacement in pairs(abbreviations) do
---       if string.sub(leading, -#abbr) == abbr then
---         vim.fn.feedkeys(string.rep("\b", #abbr) .. replacement)
---         return
---       end
---     end
---   end,
--- })
+-- ide like highlight when stopping cursor
+
+vim.api.nvim_create_autocmd("CursorMoved", {
+  group = vim.api.nvim_create_augroup("LspReferenceHighlight", { clear = true }),
+  desc = "Highlight references under cursor",
+  callback = function()
+    -- Only run if the cursor is not in insert mode
+    if vim.fn.mode() ~= "i" then
+      local clients = vim.lsp.get_clients({ bufnr = 0 })
+      local supports_highlight = false
+      for _, client in ipairs(clients) do
+        if client.server_capabilities.documentHighlightProvider then
+          supports_highlight = true
+          break -- Found a supporting client, no need to check others
+        end
+      end
+
+      -- 3. Proceed only if an LSP is active AND supports the feature
+      if supports_highlight then
+        vim.lsp.buf.clear_references()
+        vim.lsp.buf.document_highlight()
+      end
+    end
+  end,
+})
+
+-- ide like highlight when stopping cursor
+vim.api.nvim_create_autocmd("CursorMovedI", {
+  group = "LspReferenceHighlight",
+  desc = "Clear highlights when entering insert mode",
+  callback = function()
+    vim.lsp.buf.clear_references()
+  end,
+})

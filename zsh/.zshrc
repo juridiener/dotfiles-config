@@ -26,6 +26,9 @@ alias emacs-doom='open -a Emacs .'
 # alias emacskick='emacs --init-directory ~/.config/emacs/kick-start/ &'
 # alias emacsdoom='DOOMDIR=~/.config/emacs/doom emacs &'
 
+# start docker dev compose file
+alias dc-dev='docker compose -f docker-compose.yml -f docker-compose.dev.yml'
+
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
