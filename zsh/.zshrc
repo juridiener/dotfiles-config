@@ -11,7 +11,7 @@ export TERM=screen-256color
 ZSH_THEME="robbyrussell"
 
 # open all files in neovim that are not staged and modified
-alias nvim-gitdiff='nvim $(git diff --name-only)'
+alias nvim-gitmod='nvim $(git diff --name-only)'
 # goes to directory where git repo is initialized
 alias cdg='cd $(git rev-parse --show-cdup)'
 
@@ -27,7 +27,7 @@ alias emacs-doom='open -a Emacs .'
 # alias emacsdoom='DOOMDIR=~/.config/emacs/doom emacs &'
 
 # start docker dev compose file
-alias dc-dev='docker compose -f docker-compose.yml -f docker-compose.dev.yml'
+alias dc='docker compose -f docker-compose.yml -f docker-compose.dev.yml'
 
 plugins=(git)
 

@@ -150,6 +150,9 @@ config.keys = {
 			end),
 		}),
 	},
+
+	-- Pane swap: Leader + p, then type the number of the pane to swap with
+	{ key = "p", mods = "LEADER", action = act.PaneSelect({ mode = "SwapWithActive" }) },
 }
 
 -- Leader+Number tab switch
