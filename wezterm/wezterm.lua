@@ -65,6 +65,29 @@ wezterm.on("gui-startup", function()
 	mux.set_active_workspace("REACT")
 end)
 
+-- Status bar: Show zoom indicator
+wezterm.on("update-status", function(window, pane)
+	-- Check if the active pane is zoomed
+	local zoom_status = ""
+	local tab = pane:tab()
+	if tab then
+		local panes = tab:panes_with_info()
+		for _, p in ipairs(panes) do
+			if p.is_active and p.is_zoomed then
+				zoom_status = " 🔍 PANE_ZOOMED "
+				break
+			end
+		end
+	end
+
+	window:set_left_status(wezterm.format({
+		{ Background = { Color = "#1b1e28" } },
+		{ Foreground = { Color = "#eb6f92" } },
+		{ Attribute = { Intensity = "Normal" } },
+		{ Text = zoom_status },
+	}))
+end)
+
 -- Main config
 local config = {}
 
