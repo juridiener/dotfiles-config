@@ -108,7 +108,7 @@ config.window_padding = {
 }
 
 config.enable_scroll_bar = true
-config.scrollback_lines = 70000
+config.scrollback_lines = 500000
 
 config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = true })
 config.font_size = 17.0
@@ -133,6 +133,7 @@ config.inactive_pane_hsb = { brightness = 0.90 }
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2044 }
 
 config.keys = {
+	{ key = "k", mods = "CMD", action = act.ClearScrollback("ScrollbackAndViewport") },
 	{ key = "=", mods = "CTRL", action = act.ResetFontSize },
 	{ key = "|", mods = "LEADER|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "_", mods = "LEADER|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
