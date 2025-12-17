@@ -108,7 +108,7 @@ config.window_padding = {
 }
 
 config.enable_scroll_bar = true
-config.scrollback_lines = 500000
+config.scrollback_lines = 70000
 
 config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = true })
 config.font_size = 17.0
