@@ -16,3 +16,5 @@ github-copilot/
 .github-copilot/*
 github-copilot/*
 **/.env
+**/.repro/**
+.repro/
