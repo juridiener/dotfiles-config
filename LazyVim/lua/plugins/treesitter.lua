@@ -24,9 +24,6 @@ return {
         "query",
         "regex",
         "vim",
-        "norg",
-        "norg_meta",
-        "org",
       },
       textobjects = {
         select = {
