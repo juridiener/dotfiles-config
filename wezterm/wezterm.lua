@@ -4,6 +4,46 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local mux = wezterm.mux
 
+-- Helper function: Extract shortened path from full directory path
+-- Shows last N components with ".." prefix if truncated
+-- Example: /Users/juri/Documents/projects/monorepo/apps/api (3) -> ..monorepo/apps/api
+local function get_shortened_path(path, max_components)
+	if not path or path == "" then
+		return "~"
+	end
+
+	-- Handle home directory
+	local home = os.getenv("HOME")
+	if path == home then
+		return "~"
+	end
+
+	-- Replace home with ~ for shorter display
+	if home and path:sub(1, #home) == home then
+		path = "~" .. path:sub(#home + 1)
+	end
+
+	-- Split path into components
+	local components = {}
+	for part in string.gmatch(path, "[^/]+") do
+		table.insert(components, part)
+	end
+
+	-- If path has fewer components than max, return as-is
+	if #components <= max_components then
+		return path
+	end
+
+	-- Extract last N components
+	local result = {}
+	for i = #components - max_components + 1, #components do
+		table.insert(result, components[i])
+	end
+
+	-- Join with ".." prefix to indicate truncation
+	return ".." .. table.concat(result, "/")
+end
+
 wezterm.on("gui-startup", function()
 	local home = os.getenv("HOME")
 	local react_tab, react_pane, react_window = mux.spawn_window({
@@ -86,6 +126,47 @@ wezterm.on("update-status", function(window, pane)
 		{ Attribute = { Intensity = "Normal" } },
 		{ Text = zoom_status },
 	}))
+end)
+
+-- Custom tab title formatter: Preserve directory names even when apps like nvim are open
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	-- Priority 1: If tab title is explicitly set (like "REACT", "API", "DOCKER"), use that
+	if tab.tab_title and #tab.tab_title > 0 then
+		return {
+			{ Background = { Color = "#1b1e28" } },
+			{ Foreground = { Color = tab.is_active and "#a6accd" or "#767c9d" } },
+			{ Text = " " .. tab.tab_title .. " " },
+		}
+	end
+
+	-- Priority 2: Get current working directory (ignores what nvim/other apps say)
+	local title = "~"
+	local pane = tab.active_pane
+	local cwd_uri = pane and pane.current_working_dir
+
+	if cwd_uri then
+		local cwd_path = nil
+
+		-- Handle both URL object (newer versions) and string format (older versions)
+		if type(cwd_uri) == "userdata" then
+			-- Newer wezterm: URL object with file_path property
+			cwd_path = cwd_uri.file_path
+		elseif type(cwd_uri) == "string" then
+			-- Older wezterm: string like "file:///path/to/dir"
+			cwd_path = cwd_uri:gsub("file://[^/]*", "")
+		end
+
+		if cwd_path and cwd_path ~= "" then
+			title = get_shortened_path(cwd_path, 3):upper()
+		end
+	end
+
+	-- Return formatted title with your color scheme
+	return {
+		{ Background = { Color = "#1b1e28" } },
+		{ Foreground = { Color = tab.is_active and "#a6accd" or "#767c9d" } },
+		{ Text = " " .. title .. " " },
+	}
 end)
 
 -- Main config

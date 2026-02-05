@@ -53,3 +53,12 @@ vim.keymap.set(
 
 -- orgmode
 keymap("n", "<leader>oi", ":e ~/.config/notes/index.org<CR>", { desc = "Open index.org" })
+
+-- not working as expected
+-- keymap("ia", "ue", "ü")
+-- keymap("ia", "Ue", "Ü")
+-- keymap("ia", "oe", "ö")
+-- keymap("ia", "Oe", "Ö")
+-- keymap("ia", "ae", "ä")
+-- keymap("ia", "Ae", "Ä")
+-- keymap("ia", "sss", "ß")

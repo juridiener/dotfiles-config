@@ -27,5 +27,18 @@ return {
       "<cmd>DiffviewFileHistory --range=origin/main...HEAD --no-merges<cr>",
       desc = "View branch differences with remote",
     },
+    {
+      "<leader>gd",
+      function()
+        local start_line = vim.fn.line("v")
+        local end_line = vim.fn.line(".")
+        if start_line > end_line then
+          start_line, end_line = end_line, start_line
+        end
+        vim.cmd(string.format("%d,%dDiffviewFileHistory", start_line, end_line))
+      end,
+      mode = "v",
+      desc = "Diffview file history for selection",
+    },
   },
 }
