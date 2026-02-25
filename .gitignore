@@ -18,3 +18,5 @@ github-copilot/*
 **/.env
 **/.repro/**
 .repro/
+LazyVim/lazy-lock.json
+zed/prompts/

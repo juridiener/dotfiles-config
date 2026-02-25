@@ -23,6 +23,8 @@
       "*del*": "deny",
       "*build*": "ask",
       "*nx*": "deny",
+      "docker exec*": "ask",
+      "npx nx test*": "allow",
       "npx eslint*": "allow",
       "npx tsc*": "allow",
       "rg": "allow",
