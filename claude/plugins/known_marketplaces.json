@@ -1,0 +1,26 @@
+{
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "/Users/juri.diener/.claude/plugins/marketplaces/claude-plugins-official",
+    "lastUpdated": "2026-03-25T08:50:30.638Z"
+  },
+  "claude-code-plugins": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-code"
+    },
+    "installLocation": "/Users/juri.diener/.claude/plugins/marketplaces/claude-code-plugins",
+    "lastUpdated": "2026-03-23T11:23:14.118Z"
+  },
+  "context-mode": {
+    "source": {
+      "source": "github",
+      "repo": "mksglu/context-mode"
+    },
+    "installLocation": "/Users/juri.diener/.claude/plugins/marketplaces/context-mode",
+    "lastUpdated": "2026-03-23T09:10:16.201Z"
+  }
+}

@@ -59,7 +59,6 @@ wezterm.on("gui-startup", function()
 		workspace = "API",
 	})
 	ws_api_tab:set_title("API")
-	ws_api_pane:split({ direction = "Right", size = 0.1 })
 	ws_api_tab:activate()
 	ws_api_pane:activate()
 
@@ -97,12 +96,12 @@ wezterm.on("gui-startup", function()
 	})
 	ws_config_tab:set_title("CONFIG")
 
-	react_tab:activate()
+	ws_monorepo_tab:activate()
 
 	local ws_api_tab2 = ws_api_window:spawn_tab({})
 	ws_api_tab2:set_title("Tab2")
 
-	mux.set_active_workspace("REACT")
+	mux.set_active_workspace("MONOREPO")
 end)
 
 -- Status bar: Show zoom indicator
@@ -195,6 +194,7 @@ config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = true })
 config.font_size = 17.0
 config.adjust_window_size_when_changing_font_size = false
 config.color_scheme = "Rosé Pine (base16)"
+-- config.color_scheme = "lume"
 config.max_fps = 120
 
 config.colors = {
@@ -258,6 +258,11 @@ config.keys = {
 
 	-- Pane swap: Leader + p, then type the number of the pane to swap with
 	{ key = "p", mods = "LEADER", action = act.PaneSelect({ mode = "SwapWithActive" }) },
+	{
+		key = "Return",
+		mods = "SHIFT",
+		action = wezterm.action.SendString("\x1b\n"),
+	},
 }
 
 -- Leader+Number tab switch

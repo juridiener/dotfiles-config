@@ -19,4 +19,7 @@ github-copilot/*
 **/.repro/**
 .repro/
 LazyVim/lazy-lock.json
-zed/prompts/
+zed/prompts/**/*
+zed/conversations/**/*
+git/
+**/.claude/settings.local.json

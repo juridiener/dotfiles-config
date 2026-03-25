@@ -1,0 +1,23 @@
+{
+  "skill_name": "tech-decision-advisor",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I'm building a React Native chat app. Users can open a bottom sheet to reply to messages inline — the sheet has a message list and a text input at the bottom. I'm torn between gorhom/bottom-sheet and truesheet. Which one should I go with?",
+      "expected_output": "Asks 3-5 targeted questions about snap point requirements, flex layout behavior, then researches known issues, produces a pros/cons comparison and saves a {topic}-{date}.md report. Should surface the gorhom flex layout bug with partial snap points.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Starting a new SaaS project. Should I use Next.js or TanStack Start? I want SSR and I'm going to have a lot of data fetching.",
+      "expected_output": "Asks 3-5 targeted questions about team experience, deployment target, RSC needs, client vs server data patterns. Researches TanStack Start's maturity/stability, Next.js ecosystem. Produces comparison report with roadmap info and recommendation.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We're running on AWS Amplify + DynamoDB + Cognito and it's getting painful to maintain. We're a team of 3 and the app is a B2B SaaS with relational-ish data. Thinking about switching to Supabase. Is it worth it?",
+      "expected_output": "Asks questions about current pain points, data model (relational vs document), migration timeline, team Postgres experience. Researches Amplify pain points, Supabase maturity, migration stories. Produces a stack comparison report with migration cost estimate and clear go/no-go recommendation.",
+      "files": []
+    }
+  ]
+}
