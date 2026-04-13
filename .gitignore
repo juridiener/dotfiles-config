@@ -23,3 +23,5 @@ zed/prompts/**/*
 zed/conversations/**/*
 git/
 **/.claude/settings.local.json
+
+**/claude/image-cache/**/*
