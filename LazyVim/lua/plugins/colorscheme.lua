@@ -16,19 +16,19 @@ return {
   -- {"olivercederborg/poimandres.nvim"},
   -- {"aliqyan-21/darkvoid.nvim"},
   { "RRethy/base16-nvim" },
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "base16-rose-pine",
-  --   },
-  -- },
   {
-    "danfry1/lume",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("lume").setup()
-      vim.cmd("colorscheme lume")
-    end,
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "base16-rose-pine",
+    },
   },
+  -- {
+  --   "danfry1/lume",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("lume").setup()
+  --     vim.cmd("colorscheme lume")
+  --   end,
+  -- },
 }

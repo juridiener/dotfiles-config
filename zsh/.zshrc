@@ -34,6 +34,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export OLLAMA_API_BASE="http://localhost:11434"
 export PATH="$HOME/.emacs.d/bin:$PATH"

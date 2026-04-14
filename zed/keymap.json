@@ -5,39 +5,272 @@
 //
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
+//
+// ============================================================
+// LAZYVIM-STYLE KEYBINDINGS
+// This config uses <leader> (Space) bindings like LazyVim
+// instead of default Zed shortcuts (cmd-p, cmd-shift-f, etc.)
+// ============================================================
 [
+  // ============================================================
+  // DISABLE DEFAULT ZED KEYBINDINGS
+  // (So we can use LazyVim-style leader bindings instead)
+  // ============================================================
   {
     "context": "Workspace",
     "bindings": {
-      // "space-f": "file_finder::Toggle",
-    },
+      // Disable default cmd-p (we'll use <leader>ff)
+      "cmd-p": null,
+      // Disable default cmd-shift-f (we'll use <leader>sg or <leader>ft)
+      "cmd-shift-f": null,
+      // Keep useful Zed defaults that don't conflict
+      "cmd-shift-p": "command_palette::Toggle",
+      "cmd-k": "command_palette::Toggle",
+      "cmd-,": "zed::OpenSettings",
+      "cmd-w": "pane::CloseActiveItem",
+      "cmd-s": "workspace::Save",
+      
+      // LazyVim-style bindings that work even without file open
+      "space f f": "file_finder::Toggle",
+      "space f t": "workspace::NewSearch",
+      "space f r": "file_finder::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space /": "workspace::NewSearch"
+    }
   },
+
+  // ============================================================
+  // LAZYVIM-STYLE LEADER KEYBINDINGS
+  // Leader = Space (set in vim mode by default)
+  // ============================================================
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "VimControl && !menu",
     "bindings": {
-      "j k": "vim::NormalBefore",
-    },
+      // ============================================================
+      // FILE NAVIGATION (Telescope/fzf-lua equivalents)
+      // ============================================================
+      
+      // <leader>ff - Find files (like Telescope find_files)
+      "space f f": "file_finder::Toggle",
+      
+      // <leader>ft - Find text / live grep (like Telescope live_grep)
+      "space f t": "workspace::NewSearch",
+      
+      // <leader>sg - Search grep (LazyVim default for project search)
+      "space s g": "workspace::NewSearch",
+      
+      // <leader>fr - Recent files (file finder shows recent first)
+      "space f r": "file_finder::Toggle",
+      
+      // <leader>fb - Search in open buffers
+      "space f b": "buffer_search::Deploy",
+      
+      // <leader>/ - Live grep across all files in project
+      "space /": "workspace::NewSearch",
+
+      // ============================================================
+      // FILE TREE (Neo-tree/nvim-tree)
+      // ============================================================
+      
+      // <leader>e - Toggle file explorer
+      "space e": "workspace::ToggleLeftDock",
+
+      // ============================================================
+      // CUSTOM VIM BINDINGS
+      // ============================================================
+      
+      // Clear search highlights (ESC)
+      "escape": "editor::Cancel",
+
+      // Folds (zz -> za)
+      "z z": "editor::ToggleFold",
+
+      // Diagnostic float (M key)
+      "shift-m": "editor::Hover",
+
+      // Grep shortcut (leader ,)
+      "space ,": "workspace::NewSearch",
+
+      // ============================================================
+      // LSP & CODE ACTIONS
+      // ============================================================
+      
+      // <leader>ca - Code actions
+      "space c a": "editor::ToggleCodeActions",
+      
+      // <leader>rn - Rename
+      "space r n": "editor::Rename",
+
+      // ============================================================
+      // GIT (DiffView equivalents)
+      // ============================================================
+      
+      // <leader>gg - Open Git panel (staging, commits, diff)
+      "space g g": "git_panel::ToggleFocus",
+      
+      // <leader>gd - Toggle hunk diff (inline changes)
+      "space g d": "editor::ToggleHunkDiff",
+      
+      // <leader>gb - Toggle git blame (inline)
+      "space g b": "editor::ToggleGitBlame",
+      
+      // <leader>gh - Hunk actions menu
+      "space g h": "editor::ToggleHunkDiff",
+      
+      // <leader>gp - Open git blame (blame panel)
+      "space g p": "editor::OpenPermalinkToLine",
+      
+      // <leader>gr - Revert current hunk
+      "space g r": "editor::RevertSelectedHunks",
+      
+      // <leader>gt - Open terminal for git commands (lazygit)
+      "space g t": "terminal_panel::ToggleFocus",
+
+      // ============================================================
+      // DIAGNOSTICS
+      // ============================================================
+      
+      // <leader>xx - Toggle diagnostics/problems
+      "space x x": "diagnostics::Deploy",
+      
+      // <leader>xp - TypeScript type check (see tasks.json)
+      "space x p": "task::Spawn",
+
+      // ============================================================
+      // SPLITS/WINDOWS
+      // ============================================================
+      
+      // <leader>sv - Split vertical (left/right)
+      "space s v": "pane::SplitRight",
+      
+      // <leader>sh - Split horizontal (top/bottom)
+      "space s h": "pane::SplitDown",
+      
+      // <leader>| - Quick split vertical
+      "space |": "pane::SplitRight",
+      
+      // <leader>- - Quick split horizontal
+      "space -": "pane::SplitDown",
+
+      // ============================================================
+      // BUFFERS/TABS
+      // ============================================================
+      
+      // <leader>bd - Close buffer
+      "space b d": "pane::CloseActiveItem",
+      
+      // <leader>w - Save
+      "space w": "workspace::Save",
+      
+      // <leader>q - Quit/Close pane
+      "space q": "pane::CloseActiveItem"
+    }
   },
+
+  // ============================================================
+  // VIM INSERT MODE
+  // ============================================================
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      // jk to escape (from your LazyVim config)
+      "j k": "vim::NormalBefore",
+
+      // Copilot accept (Alt+a)
+      "alt-a": "editor::AcceptPartialCopilotSuggestion"
+    }
+  },
+
+  // ============================================================
+  // VIM NORMAL MODE
+  // ============================================================
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      // Copilot next/previous suggestions
+      "alt-]": "copilot::NextSuggestion",
+      "alt-[": "copilot::PreviousSuggestion",
+
+      // Window navigation (LazyVim defaults)
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+
+      // Buffer navigation (from your existing config)
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      
+      // Diagnostic navigation
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] e": ["editor::GoToDiagnostic", { "severity": "error" }],
+      "[ e": ["editor::GoToPreviousDiagnostic", { "severity": "error" }],
+      "] w": ["editor::GoToDiagnostic", { "severity": "warning" }],
+      "[ w": ["editor::GoToPreviousDiagnostic", { "severity": "warning" }],
+      
+      // Git hunk navigation
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPreviousHunk"
+    }
+  },
+
+  // ============================================================
+  // PANE RESIZING (from your existing config)
+  // ============================================================
   {
     "context": "Pane && vim_mode == normal",
     "bindings": {
       "alt-up": "workspace::IncreaseActiveDockSize",
       "alt-down": "workspace::DecreaseActiveDockSize",
       "alt-left": "workspace::DecreaseOpenDocksSize",
-      "alt-right": "workspace::IncreaseOpenDocksSize",
-    },
+      "alt-right": "workspace::IncreaseOpenDocksSize"
+    }
   },
+
+  // ============================================================
+  // VIM VISUAL MODE
+  // ============================================================
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "vim_mode == visual",
     "bindings": {
-      "shift-h": "pane::ActivatePreviousItem",
-      "shift-l": "pane::ActivateNextItem",
-      // "[B": "pane::SwapItemLeft",
-      // "]B": "pane::SwapItemRight",
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-j": "workspace::ActivatePaneDown",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight",
-    },
+      // Don't yank on put (keep clipboard)
+      "p": ["workspace::SendKeystrokes", "p g v y"]
+    }
   },
+
+  // ============================================================
+  // PROJECT PANEL (Neo-tree/nvim-tree style)
+  // ============================================================
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "l": "project_panel::Open",
+      "h": "project_panel::CollapseSelectedEntry",
+      "o": "project_panel::Open",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "d": "project_panel::Delete",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "space e": "workspace::ToggleLeftDock",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+
+  // ============================================================
+  // DEBUGGING (F-keys like nvim-dap)
+  // ============================================================
+  {
+    "context": "Editor",
+    "bindings": {
+      "f5": "debugger::Continue",
+      "f9": "editor::ToggleBreakpoint",
+      "f10": "debugger::StepOver",
+      "f11": "debugger::StepInto",
+      "f12": "debugger::StepOut"
+    }
+  }
 ]

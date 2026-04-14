@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux-settings.schema.json",
+  "schemaVersion": 1,
+
+  "shortcuts": {
+    "bindings": {
+      // --- Pane splits (LEADER = ctrl+a, like WezTerm) ---
+      "splitRight":              ["ctrl+a", "shift+\\"],  // LEADER+|
+      "splitDown":               ["ctrl+a", "shift+-"],   // LEADER+_
+
+      // --- Pane focus (vim-style) ---
+      "focusLeft":               ["ctrl+a", "h"],
+      "focusRight":              ["ctrl+a", "l"],
+      "focusUp":                 ["ctrl+a", "k"],
+      "focusDown":               ["ctrl+a", "j"],
+
+      // --- Pane zoom & close ---
+      "toggleSplitZoom":         ["ctrl+a", "="],
+      "closeTab":                ["ctrl+a", "x"],
+
+      // --- Fullscreen ---
+      "toggleFullScreen":        ["ctrl+a", "f"],
+
+      // --- Workspace navigation ---
+      "goToWorkspace":           ["ctrl+a", "s"],
+      "newTab":                  ["ctrl+a", "w"],
+      "selectWorkspaceByNumber": ["ctrl+a", "1"],  // matches 1-9
+
+      // --- Command palette ---
+      "commandPalette":          "cmd+shift+p"
+    }
+  }
+}

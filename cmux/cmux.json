@@ -1,0 +1,164 @@
+{
+  "commands": [
+    {
+      "name": "Setup: MONOREPO",
+      "keywords": ["monorepo", "nx", "next", "workspace"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "MONOREPO",
+        "cwd": "~/Documents/projects/hains/hains_docker/monorepo",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "monorepo",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Setup: API",
+      "keywords": ["api", "nest", "backend"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "API",
+        "cwd": "~/Documents/projects/hains/hains_docker/HAINS-api",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "api",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Setup: REACT",
+      "keywords": ["react", "dienstplaner", "frontend"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "REACT",
+        "cwd": "~/Documents/projects/hains/hains_docker/dienstplaner",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "react",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Setup: DOCKER",
+      "keywords": ["docker", "containers"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "DOCKER",
+        "cwd": "~/Documents/projects/hains/hains_docker",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "docker",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Setup: JOOMLA",
+      "keywords": ["joomla", "cms", "php"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "JOOMLA",
+        "cwd": "~/Documents/projects/hains/hains_docker/hains_joomla/joomla/hains",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "joomla",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Setup: DEV",
+      "keywords": ["dev", "development"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "DEV",
+        "cwd": "~/Documents/dev",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "dev",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Setup: SERVER",
+      "keywords": ["server", "ssh", "home"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "SERVER",
+        "cwd": "~",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "server",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Setup: CONFIG",
+      "keywords": ["config", "dotfiles", "settings"],
+      "restart": "ignore",
+      "workspace": {
+        "name": "CONFIG",
+        "cwd": "~/.config",
+        "layout": {
+          "pane": {
+            "surfaces": [
+              {
+                "type": "terminal",
+                "name": "config",
+                "focus": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  // ============================================================
+  // TASKS CONFIGURATION
+  // Replacement for your custom TypeScript type check function
+  // Access with: <leader>xp (space x p) or cmd-shift-p -> "task::Spawn"
+  // ============================================================
+  "tasks": [
+    {
+      "label": "TypeScript: Check All (Monorepo)",
+      "command": "docker",
+      "args": [
+        "exec",
+        "hains_nest_api",
+        "bash",
+        "-c",
+        "cd /app && npx tsc --noEmit"
+      ],
+      "reveal": "always",
+      "use_new_terminal": false
+    },
+    {
+      "label": "TypeScript: Check NestJS API",
+      "command": "docker",
+      "args": [
+        "exec",
+        "hains_nest_api",
+        "bash",
+        "-c",
+        "cd /app && npx tsc --noEmit -p apps/api/tsconfig.json"
+      ],
+      "reveal": "always",
+      "use_new_terminal": false
+    },
+    {
+      "label": "TypeScript: Check Next.js App (cliniqon)",
+      "command": "docker",
+      "args": [
+        "exec",
+        "hains_next_app",
+        "bash",
+        "-c",
+        "cd /app && npx tsc --noEmit -p apps/cliniqon/tsconfig.json"
+      ],
+      "reveal": "always",
+      "use_new_terminal": false
+    },
+    {
+      "label": "Docker: Attach Debugger (Node.js)",
+      "command": "node",
+      "args": ["--inspect-brk=0.0.0.0:9229"],
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "restart": true,
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "label": "NestJS: Restart API Container",
+      "command": "docker",
+      "args": ["restart", "hains_nest_api"],
+      "reveal": "always",
+      "use_new_terminal": false
+    },
+    {
+      "label": "Next.js: Restart App Container",
+      "command": "docker",
+      "args": ["restart", "hains_next_app"],
+      "reveal": "always",
+      "use_new_terminal": false
+    }
+  ]
+}

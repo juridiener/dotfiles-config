@@ -15,10 +15,10 @@
       {
         "scope": "project",
         "projectPath": "/Users/juri.diener/Documents/projects/hains/hains_docker/monorepo",
-        "installPath": "/Users/juri.diener/.claude/plugins/cache/claude-plugins-official/qodo-skills/0.6.0",
-        "version": "0.6.0",
+        "installPath": "/Users/juri.diener/.claude/plugins/cache/claude-plugins-official/qodo-skills/0.6.1",
+        "version": "0.6.1",
         "installedAt": "2026-03-09T14:08:55.972Z",
-        "lastUpdated": "2026-04-09T08:59:15.030Z",
+        "lastUpdated": "2026-04-14T07:56:20.582Z",
         "gitCommitSha": "623eb4ed4364d8111f9a9132a791d7497d814b6a"
       }
     ],

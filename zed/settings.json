@@ -7,22 +7,241 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // ============================================================
+  // VIM MODE
+  // ============================================================
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": false
+  },
+
+  // ============================================================
+  // THEME (Rose Pine - matching your LazyVim)
+  // Install: cmd-shift-p -> "extensions: install" -> "Rose Pine"
+  // ============================================================
+  "theme": {
+    "mode": "dark",
+    "dark": "Rosé Pine",
+    "light": "Rosé Pine Dawn"
+  },
+
+  // ============================================================
+  // FONTS
+  // ============================================================
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 15,
+  "buffer_line_height": "comfortable",
+
+  // ============================================================
+  // EDITOR BEHAVIOR
+  // ============================================================
+  "tab_size": 2,
+  "hard_tabs": false,
+  "soft_wrap": "none",
+  "preferred_line_length": 105,
+  "show_whitespaces": "none",
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "format_on_save": "on",
+  
+  // ============================================================
+  // SESSION RESTORE
+  // ============================================================
+  "restore_on_startup": "last_workspace",
+
+  // ============================================================
+  // UI APPEARANCE
+  // ============================================================
+  "current_line_highlight": "all",
+  "cursor_blink": false,
+  "relative_line_numbers": true,
+
+  "gutter": {
+    "line_numbers": true,
+    "code_actions": true,
+    "folds": true,
+    "runnables": true
+  },
+
+  "scrollbar": {
+    "show": "auto",
+    "git_diff": true,
+    "diagnostics": true
+  },
+
+  "vertical_scroll_margin": 4,
+  "horizontal_scroll_margin": 4,
+
+  // ============================================================
+  // PROJECT PANEL (like Neo-tree/nvim-tree)
+  // ============================================================
+  "project_panel": {
+    "button": true,
+    "default_width": 300,
+    "dock": "left",
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "indent_size": 20
+  },
+
+  // ============================================================
+  // TERMINAL
+  // ============================================================
+  "terminal": {
+    "font_family": "JetBrains Mono",
+    "font_size": 14,
+    "dock": "bottom",
+    "default_height": 400,
+    "working_directory": "current_project_directory"
+  },
+
+  // ============================================================
+  // LSP CONFIGURATION
+  // ============================================================
+  "enable_language_server": true,
+  "lsp": {
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": "all",
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true
+        }
+      }
+    },
+    "eslint": {
+      "settings": {
+        "codeActionOnSave": {
+          "enable": true,
+          "mode": "all"
+        }
+      }
+    }
+  },
+
+  // ============================================================
+  // GIT INTEGRATION (like gitsigns + diffview)
+  // ============================================================
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+
+  // ============================================================
+  // SEARCH SETTINGS
+  // ============================================================
+  "search": {
+    "case_sensitive": false,
+    "whole_word": false,
+    "regex": false
+  },
+
+  // ============================================================
+  // FILE EXCLUSIONS (from your wildignore)
+  // ============================================================
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/node_modules",
+    "**/.next",
+    "**/.nuxt",
+    "**/target",
+    "**/.idea",
+    "**/coverage",
+    "**/.DS_Store"
+  ],
+
+  // ============================================================
+  // COPILOT (matching your copilot.lua config)
+  // ============================================================
+  "features": {
+    "copilot": true
+  },
+
+  // ============================================================
+  // AUTO-SAVE
+  // ============================================================
+  "autosave": "on_focus_change",
+
+  // ============================================================
+  // TABS CONFIGURATION
+  // ============================================================
   "tabs": {
     "file_icons": true,
     "git_status": true
   },
-  "preferred_line_length": 105,
-  "tab_size": 2,
+
+  // ============================================================
+  // WHICH-KEY (like LazyVim which-key)
+  // ============================================================
   "which_key": {
     "enabled": true
   },
+
+  // ============================================================
+  // BASE KEYMAP
+  // ============================================================
   "base_keymap": "VSCode",
-  "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark",
+
+  // ============================================================
+  // COLLABORATION & AI
+  // ============================================================
+  "collaboration_panel": {
+    "button": false,
+    "dock": "left"
   },
+
+  "assistant": {
+    "enabled": true,
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4"
+    }
+  },
+
+  // ============================================================
+  // TELEMETRY
+  // ============================================================
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  // ============================================================
+  // LANGUAGES (matching your treesitter ensure_installed)
+  // ============================================================
+  "languages": {
+    "TypeScript": {
+      "tab_size": 2,
+      "format_on_save": "on",
+      "formatter": "prettier"
+    },
+    "JavaScript": {
+      "tab_size": 2,
+      "format_on_save": "on",
+      "formatter": "prettier"
+    },
+    "TSX": {
+      "tab_size": 2,
+      "format_on_save": "on",
+      "formatter": "prettier"
+    },
+    "JSON": {
+      "tab_size": 2,
+      "format_on_save": "on"
+    },
+    "Python": {
+      "tab_size": 4,
+      "format_on_save": "on"
+    },
+    "Markdown": {
+      "tab_size": 2,
+      "soft_wrap": "preferred_line_length"
+    }
+  }
 }
